@@ -8,5 +8,6 @@ namespace CTSLibrary
 {
     public class Class1
     {
+        // Comment
     }
 }
