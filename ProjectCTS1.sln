@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSLibrary", "CTSLibrary\CTSLibrary.csproj", "{1E91EEDF-75BC-4E25-B105-28B3C00213E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSAdminModule", "CTSAdminModule\CTSAdminModule.csproj", "{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSTuterModule", "CTSTuterModule\CTSTuterModule.csproj", "{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSUserModule", "CTSUserModule\CTSUserModule.csproj", "{6463DB98-E94C-4028-806F-07D6B0E90A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocsModule", "DocsModule\DocsModule.csproj", "{9503700F-B85F-4DAD-ADD3-95C83F32EBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupportSite", "SupportSite\SupportSite.csproj", "{8D2E0DDB-A979-435E-AA2E-5E82F35B68B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerModule", "ServerModule\ServerModule.csproj", "{639D1446-1E61-403A-B983-AD497C965976}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cts1.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = CTSLibrary\\CTSLibrary.csproj
+		SccProjectName0 = CTSLibrary
+		SccAuxPath0 = https://cts1.visualstudio.com/defaultcollection
+		SccLocalPath0 = CTSLibrary
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = CTSAdminModule\\CTSAdminModule.csproj
+		SccProjectName1 = CTSAdminModule
+		SccAuxPath1 = https://cts1.visualstudio.com/defaultcollection
+		SccLocalPath1 = CTSAdminModule
+		SccProjectUniqueName2 = CTSLibrary\\CTSLibrary.csproj
+		SccProjectName2 = CTSLibrary
+		SccLocalPath2 = CTSLibrary
+		SccProjectUniqueName3 = CTSTuterModule\\CTSTuterModule.csproj
+		SccProjectName3 = CTSTuterModule
+		SccLocalPath3 = CTSTuterModule
+		SccProjectUniqueName4 = CTSUserModule\\CTSUserModule.csproj
+		SccProjectName4 = CTSUserModule
+		SccLocalPath4 = CTSUserModule
+		SccProjectUniqueName5 = DocsModule\\DocsModule.csproj
+		SccProjectName5 = DocsModule
+		SccLocalPath5 = DocsModule
+		SccProjectUniqueName6 = ServerModule\\ServerModule.csproj
+		SccProjectName6 = ServerModule
+		SccLocalPath6 = ServerModule
+		SccProjectUniqueName7 = SupportSite\\SupportSite.csproj
+		SccProjectName7 = SupportSite
+		SccLocalPath7 = SupportSite
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E91EEDF-75BC-4E25-B105-28B3C00213E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E91EEDF-75BC-4E25-B105-28B3C00213E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E91EEDF-75BC-4E25-B105-28B3C00213E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E91EEDF-75BC-4E25-B105-28B3C00213E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6463DB98-E94C-4028-806F-07D6B0E90A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6463DB98-E94C-4028-806F-07D6B0E90A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6463DB98-E94C-4028-806F-07D6B0E90A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6463DB98-E94C-4028-806F-07D6B0E90A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9503700F-B85F-4DAD-ADD3-95C83F32EBBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9503700F-B85F-4DAD-ADD3-95C83F32EBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9503700F-B85F-4DAD-ADD3-95C83F32EBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9503700F-B85F-4DAD-ADD3-95C83F32EBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2E0DDB-A979-435E-AA2E-5E82F35B68B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2E0DDB-A979-435E-AA2E-5E82F35B68B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2E0DDB-A979-435E-AA2E-5E82F35B68B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2E0DDB-A979-435E-AA2E-5E82F35B68B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{639D1446-1E61-403A-B983-AD497C965976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{639D1446-1E61-403A-B983-AD497C965976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{639D1446-1E61-403A-B983-AD497C965976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{639D1446-1E61-403A-B983-AD497C965976}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

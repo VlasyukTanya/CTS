@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="173222ec-bd55-4bb6-9369-9aa962e5456a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://127.0.0.1:11001/servicects" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="a43d19f9-b492-4916-acf4-f984e67ed052" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4d7dacbf-8843-49aa-8864-aaf496118f9e" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="18953b96-fcb8-4d13-bf36-644f326043a4" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="9d37df2c-d047-479f-a951-0d043d7088e8" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="DBLibrary.xsd" MetadataType="Schema" ID="99bcf80a-7cbd-46ee-aa6a-b62147b9def0" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

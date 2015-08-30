@@ -1,0 +1,123 @@
+﻿<Window x:Class="WpfCTSAdminModule.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Admin Panel" Height="515" Width="585" FontSize="18" MinHeight="515" MinWidth="585">
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Name="panel2"  Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Source="Icon/add_group.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_10"/>
+            <Image Source="Icon/edit_group.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_11"/>
+            <Image Source="Icon/delete_group.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_12"/>
+            <Image Source="Icon/find_group.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_13"/>
+            <Image Source="Icon/help_group.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_14"/>
+        </StackPanel>
+        <StackPanel Name="panel1" Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Source="Icon/add_tutor.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown"/>
+            <Image Source="Icon/edit_tutor.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_6"/>
+            <Image Source="Icon/delete_tutor.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_7"/>
+            <Image Source="Icon/find_tutor.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_8"/>
+            <Image Source="Icon/help_tutor.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_9"/>
+        </StackPanel>
+        <StackPanel Name="panel0"  Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Source="Icon/add_subjects.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_1"/>
+            <Image Source="Icon/edit_subjects.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_2"/>
+            <Image Source="Icon/delete_subjects.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_3"/>
+            <Image Source="Icon/find_subjects.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_4"/>
+            <Image Source="Icon/help_subjects.jpg" Height="25" Width="25" Margin="0 0 20 0" MouseDown="Image_MouseDown_5"/>
+        </StackPanel>
+
+        <TabControl Name="tabcontrol1"  Grid.Row="1" SelectionChanged="tabcontrol1_SelectionChanged">
+            <TabItem Name="tabItem1"  Header="Дисциплины" >
+                <Grid Name="tabItem1Grid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="33*"></RowDefinition>
+                        <RowDefinition Height="306*"></RowDefinition>
+                        <RowDefinition Height="40*"></RowDefinition>
+                        <RowDefinition Height="40*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="tabItem1Label" Content="Список предметов" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Margin="3,0" Width="182"/>
+                    <ListView Name="tabItem1ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="№" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                        <Button Name="tabItem1ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem1ButtonAdd_Click_1"/>
+                        <Button Name="tabItem1ButtonDelete" Grid.Row="2" Grid.Column="1" Content="Удалить" Margin="5" Click="tabItem1ButtonDelete_Click_1"/>
+                        <Button Name="tabItem1ButtonEdit" Grid.Row="3" Grid.Column="0" Content="Редактировать" Margin="5" Click="tabItem1ButtonEdit_Click_1"/>
+                        <Button Name="tabItem1ButtonFind" Grid.Row="3" Grid.Column="1" Content="Найти" Margin="5" Click="tabItem1ButtonFind_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabItem2" Header="Преподаватели">
+                <Grid Name="tabItem2Grid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="33*"></RowDefinition>
+                        <RowDefinition Height="306*"></RowDefinition>
+                        <RowDefinition Height="40*"></RowDefinition>
+                        <RowDefinition Height="40*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="tabItem2Label" Content="Список преподавателей" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Margin="3,0" Width="182"/>
+                    <ListView Name="tabItem2ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="№"/>
+                                <GridViewColumn Header="ФИО"/>
+                                <GridViewColumn Header="Предметы"/>
+                                <GridViewColumn Header="Группы"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Name="tabItem2ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem2ButtonAdd_Click"/>
+                    <Button Name="tabItem2ButtonDelete" Grid.Row="2" Grid.Column="1" Content="Удалить" Margin="5" Click="tabItem2ButtonDelete_Click"/>
+                    <Button Name="tabItem2ButtonEdit" Grid.Row="3" Grid.Column="0" Content="Редактировать" Margin="5" Click="tabItem2ButtonEdit_Click"/>
+                    <Button Name="tabItem2ButtonFind" Grid.Row="3" Grid.Column="1" Content="Найти" Margin="5" Click="tabItem2ButtonFind_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="tabItem3" Header="Группы">
+                <Grid Name="tabItem3Grid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28*"></RowDefinition>
+                        <RowDefinition Height="286*"></RowDefinition>
+                        <RowDefinition Height="40*"></RowDefinition>
+                        <RowDefinition Height="40*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="tabItem3Label" Content="Список групп" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Margin="52,0,50,0" Width="182"/>
+                    <ListView Name="tabItem3ListView" Grid.Row="1" Grid.ColumnSpan="2" Margin="9,10,11,10">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="№"/>
+                                <GridViewColumn Header="Наименование группы"/>
+                                <GridViewColumn Header="Дата регистрации"/>
+                                <GridViewColumn Header="Дата последнего измененеия"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button Name="tabItem3ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem3ButtonAdd_Click"/>    
+                    <Button Name="tabItem3ButtonDelete" Grid.Row="2" Grid.Column="1" Content="Удалить" Margin="5" Click="tabItem3ButtonDelete_Click"/>
+                    <Button Name="tabItem3ButtonEdit" Grid.Row="3" Grid.Column="0" Content="Редактировать" Margin="5" Click="tabItem3ButtonEdit_Click"/>
+                    <Button Name="tabItem3ButtonFind" Grid.Row="3" Grid.Column="1" Content="Найти" Margin="5" Click="tabItem3ButtonFind_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

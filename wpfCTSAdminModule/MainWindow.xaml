@@ -1,0 +1,45 @@
+﻿<Window x:Class="wpfCTSAdminModule.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="490.8" Width="753.8">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Категории" Height="23" Margin="-2,-2,-2.2,-1" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="46*"></RowDefinition>
+                        <RowDefinition Height="269*"></RowDefinition>
+                        <RowDefinition Height="58*"></RowDefinition>
+                        <RowDefinition Height="56*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="Список категорий" HorizontalAlignment="Center"/>
+                    <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Номер" />
+                                <GridViewColumn Header="Предмет"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10"/>
+                    <Button Name="save" Grid.Row="3" Grid.Column="0" Margin="10" Content="Save"/>
+                    <Button Name="dalete" Grid.Row="3" Grid.Column="1" Margin="10" Content="Delete"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Преподаватели">
+                <Grid Background="#FFE5E5E5">
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Группы" Height="23" Margin="-2,-2,-2.2,-1" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        
+    </Grid>
+</Window>

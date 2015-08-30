@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfCTSUserModule.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginWindow" MaxHeight="300" MaxWidth="300" MinHeight="300" MinWidth="300">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Enter Your Creditenals:" Name="statusLabel" Background="LightGreen" FontFamily="Arial" FontSize="24"></Label>
+        <Label Grid.Row="1" Content="Login" FontFamily="Arial" FontSize="24"/>
+        <TextBox Grid.Row="2" Name="loginTextBox" FontFamily="Arial" FontSize="24" Background="LightYellow"></TextBox>
+        <Label Grid.Row="3" Content="Password" FontFamily="Arial" FontSize="24"/>
+        <TextBox Grid.Row="4" Name="passwordTextBox" FontFamily="Arial" FontSize="24" Background="LightYellow"></TextBox>
+        <Button Grid.Row="5" Content="Sign In" Name="signInButton" Click="signInButton_Click" FontFamily="Arial" FontSize="24"/>
+    </Grid>
+</Window>

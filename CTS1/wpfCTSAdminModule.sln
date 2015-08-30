@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCTSAdminModule", "WpfCTSAdminModule\WpfCTSAdminModule.csproj", "{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://cts1.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = WpfCTSAdminModule\\WpfCTSAdminModule.csproj
+		SccProjectName0 = WpfCTSAdminModule
+		SccLocalPath0 = WpfCTSAdminModule
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
