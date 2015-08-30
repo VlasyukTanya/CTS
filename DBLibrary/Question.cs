@@ -4,6 +4,9 @@ using System.Runtime.Serialization;
 
 namespace DBLibrary
 {
+
+//DataContracts
+
     [DataContract]
     public class Question
     {
