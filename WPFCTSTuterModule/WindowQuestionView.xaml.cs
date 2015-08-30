@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Markup;
 // some change is added
+// another important comment
 namespace WPFCTSTuterModule
 {
     /// <summary>
