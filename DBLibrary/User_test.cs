@@ -93,7 +93,8 @@ namespace DBLibrary
 
         public void Create()
         {
-            this.db.ExecuteNonQuery(String.Format("EXECUTE InsertOfUsers_tests {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}", this.id_user, this.id_test, this.numberOfTries, this.mark, this.ifAvailable, this.testTime, this.testContinuesTime));
+//            this.db.ExecuteNonQuery(String.Format("EXECUTE InsertOfUsers_tests {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}", this.id_user, this.id_test, this.numberOfTries, this.mark, this.ifAvailable ? 1 : 0, this.testTime, this.canSkip ? 1 : 0, this.canBack ? 1 : 0, this.testContinuesTime));
+            this.db.ExecuteNonQuery(String.Format("INSERT INTO users_tests (user_id, test_id, tries_num, mark, available, test_time, can_skip, can_back, available_time) VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})", this.id_user, this.id_test, this.numberOfTries, this.mark, this.ifAvailable ? 1 : 0, this.testTime, this.canSkip ? 1 : 0, this.canBack ? 1 : 0, this.testContinuesTime));
         }
     }
 }
