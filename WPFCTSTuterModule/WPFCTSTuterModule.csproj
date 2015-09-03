@@ -64,13 +64,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="AppointTest.xaml.cs">
+      <DependentUpon>AppointTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="AppointTest.xaml.cs">
-      <DependentUpon>AppointTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowQuestionView.xaml.cs">
       <DependentUpon>WindowQuestionView.xaml</DependentUpon>

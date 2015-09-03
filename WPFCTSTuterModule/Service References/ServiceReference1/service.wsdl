@@ -77,6 +77,12 @@
   <wsdl:message name="IServiceCTS_DrawQuestionById_OutputMessage">
     <wsdl:part name="parameters" element="tns:DrawQuestionByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceCTS_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceCTS_GetUsersCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetUsersCount" />
   </wsdl:message>
@@ -94,6 +100,12 @@
   </wsdl:message>
   <wsdl:message name="IServiceCTS_IIsLifeGood_OutputMessage">
     <wsdl:part name="parameters" element="tns:IIsLifeGoodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addUserTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUserTest" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addUserTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserTestResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceCTS">
     <wsdl:operation name="GetSubjectsDataTable">
@@ -120,6 +132,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/DrawQuestionById" message="tns:IServiceCTS_DrawQuestionById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/DrawQuestionByIdResponse" message="tns:IServiceCTS_DrawQuestionById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/AuthenticateUser" message="tns:IServiceCTS_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/AuthenticateUserResponse" message="tns:IServiceCTS_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetUsersCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetUsersCount" message="tns:IServiceCTS_GetUsersCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetUsersCountResponse" message="tns:IServiceCTS_GetUsersCount_OutputMessage" />
@@ -131,6 +147,10 @@
     <wsdl:operation name="IIsLifeGood">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/IIsLifeGood" message="tns:IServiceCTS_IIsLifeGood_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/IIsLifeGoodResponse" message="tns:IServiceCTS_IIsLifeGood_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUserTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addUserTest" message="tns:IServiceCTS_addUserTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addUserTestResponse" message="tns:IServiceCTS_addUserTest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ep1" type="tns:IServiceCTS">
@@ -191,6 +211,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetUsersCount">
       <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetUsersCount" style="document" />
       <wsdl:input>
@@ -218,6 +247,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addUserTest">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/addUserTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceCTS">
     <wsdl:port name="ep1" binding="tns:ep1">
@@ -225,7 +263,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://127.0.0.1:11001/servicects/ep1</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>student@step.lan</Upn>
+          <Upn>samsung\denis</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
