@@ -423,6 +423,24 @@ namespace DBLibrary
             }
             
         }
+        //Added by Lesya
+        public void DeleteByID(int id)
+        {
+            try
+            {
+                db.ExecuteNonQuery(String.Format(@"DELETE FROM users WHERE id = {0}", id));
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
         static public DataTable GetUsersDataTable(DBDriver db)
         {
             return db.ExecuteQuery(String.Format(@"SELECT * FROM users"));
