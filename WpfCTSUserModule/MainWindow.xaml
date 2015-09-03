@@ -15,7 +15,7 @@
             <Label Content="CTS1" Margin="0 0 0 0" FontFamily="Arial" FontSize="24" DockPanel.Dock="Left"/>
             <Label Content="Hello, "  Name="userNameLabel"  FontFamily="Arial" FontSize="24" DockPanel.Dock="Right"/>
         </DockPanel>
-        <Grid Grid.Column="0" Grid.Row="1" Background="LightBlue">
+        <Grid Grid.Column="0" Grid.Row="1" Background="LightBlue" Margin="0,10,0,-10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
                 <RowDefinition />
@@ -27,7 +27,9 @@
             <Label Grid.Column="0" Grid.Row="0" Content="Available Tests" FontFamily="Arial" FontSize="24" HorizontalAlignment="Center"/>
             <Label Grid.Column="1" Grid.Row="0" Content="Test Parameters" FontFamily="Arial" FontSize="24" HorizontalAlignment="Center"/>
             <ListBox Grid.Column="0" Grid.Row="1" Background="LightYellow" Grid.ColumnSpan="2" />
-            <Label Grid.Row="1" Background="LightYellow" Grid.ColumnSpan="2"/>
+            <ListBox Grid.Column="0" Grid.Row="1" x:Name="listBox1" Height="219" Width="227" HorizontalAlignment="Center"/>
+            <ListBox Grid.Column="1" Grid.Row="1"  x:Name="listBox2" Width="228" HorizontalAlignment="Center" Margin="15,17,15,84"/>
+            <Button x:Name="button" Content="Start test" Grid.Column="1" HorizontalAlignment="Left" Margin="74,196,0,0" Grid.Row="1" VerticalAlignment="Top" Width="117" Height="40" Click="button_Click"/>
         </Grid>
     </Grid>
 </Window>

@@ -22,8 +22,11 @@ namespace WpfCTSUserModule
     public partial class MainWindow : Window
     {
         private string userName;
-        public MainWindow()
+        private TestWindow parent;
+
+        public MainWindow(TestWindow parent)
         {
+            this.parent = parent;
             InitializeComponent();
             this.Hide();
             LoginWindow loginWindow = new LoginWindow(this);
@@ -39,6 +42,12 @@ namespace WpfCTSUserModule
         public void RegUser()
         {
             this.userNameLabel.Content += this.userName;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            this.parent.Show();
+            this.Close();
         }
     }
 }
