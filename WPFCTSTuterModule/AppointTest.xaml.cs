@@ -100,6 +100,7 @@ namespace WPFCTSTuterModule
             else
             {
                 MessageBox.Show("Не все параметры выбраны!");
+                MessageBox.Show("Test!");
             }
         }
 
