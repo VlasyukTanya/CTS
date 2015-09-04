@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSLibrary", "CTSLibrary\CTSLibrary.csproj", "{1E91EEDF-75BC-4E25-B105-28B3C00213E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSAdminModule", "CTSAdminModule\CTSAdminModule.csproj", "{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}"
@@ -21,11 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCTSTuterModule", "WPFCTS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCTSUserModule", "WpfCTSUserModule\WpfCTSUserModule.csproj", "{7A022127-A539-4A79-A13C-E3305200C76F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpfCTSAdminModule", "wpfCTSAdminModule\wpfCTSAdminModule.csproj", "{76F04C84-1FAF-48D7-A3C3-55807D19681A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBExample", "DBExample\DBExample.csproj", "{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "DBLibrary\DBLibrary.csproj", "{D3F0DF70-F277-4614-A250-DFF3E53A4041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCTSAdminModule", "CTS1\WpfCTSAdminModule\WpfCTSAdminModule.csproj", "{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,10 +67,6 @@ Global
 		{7A022127-A539-4A79-A13C-E3305200C76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A022127-A539-4A79-A13C-E3305200C76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A022127-A539-4A79-A13C-E3305200C76F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76F04C84-1FAF-48D7-A3C3-55807D19681A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76F04C84-1FAF-48D7-A3C3-55807D19681A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76F04C84-1FAF-48D7-A3C3-55807D19681A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76F04C84-1FAF-48D7-A3C3-55807D19681A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +75,10 @@ Global
 		{D3F0DF70-F277-4614-A250-DFF3E53A4041}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3F0DF70-F277-4614-A250-DFF3E53A4041}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3F0DF70-F277-4614-A250-DFF3E53A4041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
