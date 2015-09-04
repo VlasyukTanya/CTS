@@ -85,9 +85,12 @@ namespace WPFCTSTuterModule
                 int avail = ((Convert.ToInt32(tb_hours.Text) * 60) + Convert.ToInt32(tb_min.Text)) * 60;
 
                 int tries = Convert.ToInt32(numOfTries.SelectedValue);
+
                 try
                 {
-                proxy.addUserTest(id, t_id, tries, -1f, true, mySelectedDateTime, true, true, avail);}
+                    proxy.addUserTest(id, t_id, tries, -1f, true, mySelectedDateTime, true, true, avail);
+                }
+
                 catch (Exception err)
                 {MessageBox.Show(err.Message);}
 
