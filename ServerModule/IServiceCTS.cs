@@ -29,17 +29,56 @@ namespace ServerModule
 
         [OperationContract]
         string DrawQuestionById(int questionId);
+
         [OperationContract]
         bool AuthenticateUser(string username, string password);
+
         [OperationContract]
         int GetUsersCount();
+
         [OperationContract]
         DataTable GetUsersDataTable();
+
         [OperationContract]
         bool IIsLifeGood();
+
         [OperationContract]
         void addUserTest(int id_user, int id_test, int numberOfTries, float mark, bool ifAvailable, DateTime testTime, bool canSkip, bool canBack, int testContinuesTime);
+
         [OperationContract]
         void delUser(int id);
+
+        [OperationContract]
+        DataTable GetTutorsDataTable();
+
+        [OperationContract]
+        DataTable GetGroupsDataTable();
+
+        //[OperationContract]
+        //Subject addSubject(int id_subject, string name_subject);
+
+        //[OperationContract]
+        //void deleteSubject(int id_subject);
+
+        //[OperationContract]
+        //Subject updateSubject(int id_subject, string name_subject);
+/*
+        [OperationContract]
+        Group addGroup(int id_group, string name_group, string registrationDate_group);
+
+        [OperationContract]
+        void deleteGroup(int id_group);
+
+        [OperationContract]
+        Group updateGroup(int id_group, string name_group, string registrationDate_group);
+*/
+        //[OperationContract]
+        //User addTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string registrationDate, int roleId, int groupId);
+
+        //[OperationContract]
+        //void deleteTutor(int id_user);
+
+        //[OperationContract]
+        //User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);  
     }
 }

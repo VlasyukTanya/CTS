@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
 
 namespace DBLibrary
 {
+    [DataContract]
     public class Subject
     {
-        DBDriver db;
-        int id;
-        string name;      
+        [DataMember]
+        public DBDriver db;
+        [DataMember]
+        public int id;
+        [DataMember]
+        public string name;      
 
         public int Id
         {

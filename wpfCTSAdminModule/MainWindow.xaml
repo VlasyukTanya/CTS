@@ -37,7 +37,9 @@
             </TabItem>
 
             <TabItem Header="Группы" Height="23" Margin="-2,-2,-2.2,-1" VerticalAlignment="Bottom">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Margin="50" Content="TEST"/>
+                </Grid>
             </TabItem>
         </TabControl>
         
