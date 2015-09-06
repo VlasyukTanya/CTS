@@ -392,18 +392,19 @@ namespace DBLibrary
             if (result.Rows.Count < 1)
                 return null;
             return new User(
-                this.db, 
-                (int)result.Rows[0]["id"], 
-                (string)result.Rows[0]["name"], 
-                (string)result.Rows[0]["passwd"], 
-                (string)result.Rows[0]["real_name"], 
+                this.db,
+                (int)result.Rows[0]["id"],
+                (string)result.Rows[0]["name"],
+                (string)result.Rows[0]["passwd"],
+                (string)result.Rows[0]["real_name"],
                 (string)result.Rows[0]["email"],
                 !result.Rows[0].IsNull("additional_contacts") ? new AdditionalContacts((string)result.Rows[0]["additional_contacts"]) : new AdditionalContacts(),
-                !result.Rows[0].IsNull("last_login_date") ? ((DateTime)result.Rows[0]["last_login_date"]).ToString() : null, 
+                !result.Rows[0].IsNull("last_login_date") ? ((DateTime)result.Rows[0]["last_login_date"]).ToString() : null,
                 ((DateTime)result.Rows[0]["registration_date"]).ToString(),
-                !result.Rows[0].IsNull("last_edit_date") ? ((DateTime)result.Rows[0]["last_edit_date"]).ToString() : null, 
-                (int)result.Rows[0]["role_id"], 
-                (int)result.Rows[0]["group_id"]);
+                !result.Rows[0].IsNull("last_edit_date") ? ((DateTime)result.Rows[0]["last_edit_date"]).ToString() : null,
+                (int)result.Rows[0]["role_id"],
+                !result.Rows[0].IsNull("group_id") ? (int)result.Rows[0]["group_id"] : -1
+                );
         }
         public void AddContact(string service, string contact)
         {

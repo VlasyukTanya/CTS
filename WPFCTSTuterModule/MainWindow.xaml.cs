@@ -40,6 +40,9 @@ namespace WPFCTSTuterModule
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+ //           proxy.delUser(57);
+            
             DataTable dt = new DataTable();
             try
             {
@@ -190,7 +193,7 @@ namespace WPFCTSTuterModule
             }
             else
             {
-
+                proxy.delUser(idOfStudent);
             }
         }
 

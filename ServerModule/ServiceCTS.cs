@@ -111,6 +111,13 @@ namespace ServerModule
             User_test ut = new User_test(db, id_user, id_test, numberOfTries, mark, ifAvailable, testTime, canSkip, canBack, testContinuesTime);
             ut.Create();
         }
+<<<<<<< HEAD
+        public void delUser(int id)
+        {
+            User user = new User(db);
+            (user.Get(id)).Delete();
+        }
+=======
 
 //**********************************************************************************************************
         //Subject addSubject(int id_subject, string name_subject);
@@ -164,5 +171,6 @@ namespace ServerModule
         //void deleteTutor(int id_user);
 
         //User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);
+>>>>>>> master
     }
 }
