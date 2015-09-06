@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WpfCTSAdminModule.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Admin Panel" Height="515" Width="585" FontSize="18" MinHeight="515" MinWidth="585">
+        Title="Admin Panel" Height="601.75" Width="902" FontSize="18" MinHeight="515" MinWidth="585">
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="30px"></RowDefinition>
@@ -46,18 +46,18 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Label Name="tabItem1Label" Content="Список предметов" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Margin="3,0" Width="182"/>
-                    <ListView Name="tabItem1ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">
+                    <ListView Name="tabItem1ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" PreviewMouseLeftButtonUp="tabItem1ListView_PreviewMouseLeftButtonUp">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="№" DisplayMemberBinding="{Binding Id}"/>
-                                <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="№" DisplayMemberBinding="{Binding Path=id}"/>
+                                <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding Path=name}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                        <Button Name="tabItem1ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem1ButtonAdd_Click_1"/>
-                        <Button Name="tabItem1ButtonDelete" Grid.Row="2" Grid.Column="1" Content="Удалить" Margin="5" Click="tabItem1ButtonDelete_Click_1"/>
-                        <Button Name="tabItem1ButtonEdit" Grid.Row="3" Grid.Column="0" Content="Редактировать" Margin="5" Click="tabItem1ButtonEdit_Click_1"/>
-                        <Button Name="tabItem1ButtonFind" Grid.Row="3" Grid.Column="1" Content="Найти" Margin="5" Click="tabItem1ButtonFind_Click"/>
+                    <Button Name="tabItem1ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem1ButtonAdd_Click_1"/>
+                    <Button Name="tabItem1ButtonDelete" Grid.Row="2" Grid.Column="1" Content="Удалить" Margin="5" Click="tabItem1ButtonDelete_Click_1"/>
+                    <Button Name="tabItem1ButtonEdit" Grid.Row="3" Grid.Column="0" Content="Редактировать" Margin="5" Click="tabItem1ButtonEdit_Click_1"/>
+                    <Button Name="tabItem1ButtonFind" Grid.Row="3" Grid.Column="1" Content="Найти" Margin="5" Click="tabItem1ButtonFind_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Name="tabItem2" Header="Преподаватели">
@@ -76,10 +76,16 @@
                     <ListView Name="tabItem2ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="№"/>
-                                <GridViewColumn Header="ФИО"/>
-                                <GridViewColumn Header="Предметы"/>
-                                <GridViewColumn Header="Группы"/>
+                                <GridViewColumn Header="№" DisplayMemberBinding="{Binding Path=id}"/>
+                                <GridViewColumn Header="ФИО" DisplayMemberBinding="{Binding Path=real_name}"/>
+                                <GridViewColumn Header="login" DisplayMemberBinding="{Binding Path=name}"/>
+                                <!--<GridViewColumn Header="passwd" DisplayMemberBinding="{Binding Path=passwd}"/>-->
+                                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=email}"/>
+                                <GridViewColumn Header="Контакты" DisplayMemberBinding="{Binding Path=additional_contats}"/>
+                                <GridViewColumn Header="Дата входа" DisplayMemberBinding="{Binding Path=last_login_date}"/>
+                                <GridViewColumn Header="Дата регистрации" DisplayMemberBinding="{Binding Path=registration_date}"/>
+                                <GridViewColumn Header="Дата изменения" DisplayMemberBinding="{Binding Path=last_edit_date}"/>
+                                <GridViewColumn Header="Группы" DisplayMemberBinding="{Binding Path=group_name}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -105,14 +111,14 @@
                     <ListView Name="tabItem3ListView" Grid.Row="1" Grid.ColumnSpan="2" Margin="9,10,11,10">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="№"/>
-                                <GridViewColumn Header="Наименование группы"/>
-                                <GridViewColumn Header="Дата регистрации"/>
-                                <GridViewColumn Header="Дата последнего измененеия"/>
+                                <GridViewColumn Header="№" DisplayMemberBinding="{Binding Path=id}"/>
+                                <GridViewColumn Header="Наименование группы" DisplayMemberBinding="{Binding Path=name}"/>
+                                <GridViewColumn Header="Дата регистрации" DisplayMemberBinding="{Binding Path=registration_date}"/>
+                                <GridViewColumn Header="Дата последнего измененеия" DisplayMemberBinding="{Binding Path=last_edit_date}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Button Name="tabItem3ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem3ButtonAdd_Click"/>    
+                    <Button Name="tabItem3ButtonAdd" Grid.Row="2" Grid.Column="0" Content="Добавить" Margin="5" Click="tabItem3ButtonAdd_Click"/>
                     <Button Name="tabItem3ButtonDelete" Grid.Row="2" Grid.Column="1" Content="Удалить" Margin="5" Click="tabItem3ButtonDelete_Click"/>
                     <Button Name="tabItem3ButtonEdit" Grid.Row="3" Grid.Column="0" Content="Редактировать" Margin="5" Click="tabItem3ButtonEdit_Click"/>
                     <Button Name="tabItem3ButtonFind" Grid.Row="3" Grid.Column="1" Content="Найти" Margin="5" Click="tabItem3ButtonFind_Click"/>

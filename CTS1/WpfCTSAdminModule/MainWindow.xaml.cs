@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 
 using DBLibrary;
+using WpfCTSAdminModule.ServiceReferenceCTS;
 
 namespace WpfCTSAdminModule
 {
@@ -27,11 +28,60 @@ namespace WpfCTSAdminModule
 
     public partial class MainWindow : Window
     {
+        ServiceReferenceCTS.ServiceCTSClient proxy = new ServiceReferenceCTS.ServiceCTSClient();
+
         public MainWindow()
         {
             InitializeComponent();
+            //tabcontrol1.SelectedIndex = 2;
             LoadSubjects();
+            LoadGroups();
+            LoadTutors();
         }
+
+
+        private void LoadSubjects()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = proxy.GetSubjectsDataTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            tabItem1ListView.ItemsSource = dt.DefaultView;
+        }
+
+        private void LoadTutors()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = proxy.GetTutorsDataTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            tabItem2ListView.ItemsSource = dt.DefaultView;
+        }
+
+        private void LoadGroups()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = proxy.GetGroupsDataTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            tabItem3ListView.ItemsSource = dt.DefaultView;
+        }
+
 
         private void tabItem1ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
@@ -74,6 +124,7 @@ namespace WpfCTSAdminModule
                     StackPanel.SetZIndex(panel2, 0);
                     panel1.Opacity = 0;
                     panel2.Opacity = 0;
+                    //LoadSubjects();
                     break;
 
                 case 1:
@@ -92,6 +143,7 @@ namespace WpfCTSAdminModule
                     StackPanel.SetZIndex(panel0, 0);
                     panel1.Opacity = 0;
                     panel0.Opacity = 0;
+                    //LoadGroups();
                     break;
 
             }
@@ -104,7 +156,13 @@ namespace WpfCTSAdminModule
 
         private void tabItem1ButtonDelete_Click_1(object sender, RoutedEventArgs e)
         {
-            Method_DeleteSubjects();
+            //Method_DeleteSubjects();
+            var item = tabItem1ListView.SelectedItem;
+            if (item != null)
+            {
+                DataRowView row = item as DataRowView;
+                //proxy.deleteGroup((int)row["id"]);
+            }
         }
 
         private void tabItem1ButtonEdit_Click_1(object sender, RoutedEventArgs e)
@@ -234,7 +292,12 @@ namespace WpfCTSAdminModule
 
         private void Method_AddSubjects()
         {
-            System.Windows.MessageBox.Show("ADD Subjects!!!");
+            //WindowSubject winS = new WindowSubject();
+            //if (winS.ShowDialog() == DialogResult.OK)
+            //{
+                
+            //}
+
         }
 
         private void Method_DeleteSubjects()
@@ -307,24 +370,22 @@ namespace WpfCTSAdminModule
             System.Windows.MessageBox.Show("HELP GROUP!!!");
         }
 
-        private void LoadSubjects()
+        private void tabItem1ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            //DBDriver driver = new DBDriver(@"SQL5016.Smarterasp.net", @"DB_9D003D_cts1_admin", @"cts1CoolDbUser", @"db_9d003d_cts1");
-            //DataSet dataSubjects = driver.ExecuteQuery("SELECT * FROM dbo.subjects");
-
-            List<TestSubjects> items = new List<TestSubjects>();
-            //items.Add(new TestSubjects() { Id = Convert.ToInt32(dataSubjects.Tables[0].Rows[0].ItemArray[0]), Name = Convert.ToString(dataSubjects.Tables[0].Rows[0].ItemArray[1]) });
-
-            items.Add(new TestSubjects() { Id = 1, Name = "Test" });
-          
+            var item = (sender as ListView).SelectedItem;
+            if (item != null)
+            {
+                DataRowView row = item as DataRowView;
+                MessageBox.Show(row["name"].ToString());
+            }
             
-            tabItem1ListView.ItemsSource = items;
-            
-            
-            //string idSubjects = Convert.ToString(dataSubjects.Tables[0].Rows[0].ItemArray[0]);
-            //string nameSubjects = Convert.ToString(dataSubjects.Tables[0].Rows[0].ItemArray[1]);
-            //ListViewItem lvItem = new ListViewItem(new string[] {"11", "22", "33"});             
-           
         }
+
+        private void tabItem3_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            MessageBox.Show("VIBRANO");
+        }
+
+
     }
 }

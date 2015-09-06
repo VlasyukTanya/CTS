@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace DBLibrary
 {
@@ -73,6 +74,7 @@ namespace DBLibrary
         }
     }
 
+    [DataContract]
     public class User
     {
         DBDriver db;
@@ -427,6 +429,15 @@ namespace DBLibrary
         {
             return db.ExecuteQuery(String.Format(@"SELECT * FROM users"));
         }
+
+        static public DataTable GetTutorsDataTable(DBDriver db)
+        {
+            //return db.ExecuteQuery(String.Format(@"SELECT users.id, users.real_name, users.name, users.passwd, users.email, users.additional_contats, users.last_login_date, users.registration_date, users.last_edit_date, groups.name as 'group_name' FROM users, groups WHERE users.role_id = 2"));
+            return db.ExecuteQuery(String.Format(@"SELECT users.id, users.real_name, users.name, users.passwd, users.email, users.additional_contacts, users.last_login_date, users.registration_date, users.last_edit_date, users.group_id FROM users WHERE users.role_id = 2"));
+        }
+        
+
+
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();

@@ -47,11 +47,13 @@
   <ItemGroup>
     <Compile Include="Answer.cs" />
     <Compile Include="DBDriver.cs" />
+    <Compile Include="Group.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="User_test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

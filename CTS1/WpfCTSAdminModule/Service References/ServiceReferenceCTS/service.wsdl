@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceCTS" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ep1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DBLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceCTS_GetSubjectsDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjectsDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetSubjectsDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjectsDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTestsDataTableBySubjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestsDataTableBySubjectId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTestsDataTableBySubjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestsDataTableBySubjectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetQuestionsDataTableByTestId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionsDataTableByTestId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetQuestionsDataTableByTestId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionsDataTableByTestIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetQuestionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetQuestionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetAnswersDataTableByQuestionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnswersDataTableByQuestionId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetAnswersDataTableByQuestionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnswersDataTableByQuestionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_DrawQuestionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DrawQuestionById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_DrawQuestionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DrawQuestionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetUsersCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersCount" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetUsersCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetUsersDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetUsersDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_IIsLifeGood_InputMessage">
+    <wsdl:part name="parameters" element="tns:IIsLifeGood" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_IIsLifeGood_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IIsLifeGoodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addUserTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUserTest" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addUserTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTutorsDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorsDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTutorsDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorsDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetGroupsDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetGroupsDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsDataTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceCTS">
+    <wsdl:operation name="GetSubjectsDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetSubjectsDataTable" message="tns:IServiceCTS_GetSubjectsDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetSubjectsDataTableResponse" message="tns:IServiceCTS_GetSubjectsDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestsDataTableBySubjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetTestsDataTableBySubjectId" message="tns:IServiceCTS_GetTestsDataTableBySubjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetTestsDataTableBySubjectIdResponse" message="tns:IServiceCTS_GetTestsDataTableBySubjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionsDataTableByTestId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetQuestionsDataTableByTestId" message="tns:IServiceCTS_GetQuestionsDataTableByTestId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetQuestionsDataTableByTestIdResponse" message="tns:IServiceCTS_GetQuestionsDataTableByTestId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetQuestionById" message="tns:IServiceCTS_GetQuestionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetQuestionByIdResponse" message="tns:IServiceCTS_GetQuestionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnswersDataTableByQuestionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetAnswersDataTableByQuestionId" message="tns:IServiceCTS_GetAnswersDataTableByQuestionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetAnswersDataTableByQuestionIdResponse" message="tns:IServiceCTS_GetAnswersDataTableByQuestionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DrawQuestionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/DrawQuestionById" message="tns:IServiceCTS_DrawQuestionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/DrawQuestionByIdResponse" message="tns:IServiceCTS_DrawQuestionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/AuthenticateUser" message="tns:IServiceCTS_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/AuthenticateUserResponse" message="tns:IServiceCTS_AuthenticateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetUsersCount" message="tns:IServiceCTS_GetUsersCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetUsersCountResponse" message="tns:IServiceCTS_GetUsersCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetUsersDataTable" message="tns:IServiceCTS_GetUsersDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetUsersDataTableResponse" message="tns:IServiceCTS_GetUsersDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IIsLifeGood">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/IIsLifeGood" message="tns:IServiceCTS_IIsLifeGood_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/IIsLifeGoodResponse" message="tns:IServiceCTS_IIsLifeGood_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUserTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addUserTest" message="tns:IServiceCTS_addUserTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addUserTestResponse" message="tns:IServiceCTS_addUserTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTutorsDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetTutorsDataTable" message="tns:IServiceCTS_GetTutorsDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetTutorsDataTableResponse" message="tns:IServiceCTS_GetTutorsDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetGroupsDataTable" message="tns:IServiceCTS_GetGroupsDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetGroupsDataTableResponse" message="tns:IServiceCTS_GetGroupsDataTable_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ep1" type="tns:IServiceCTS">
+    <wsp:PolicyReference URI="#ep1_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetSubjectsDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetSubjectsDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestsDataTableBySubjectId">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetTestsDataTableBySubjectId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionsDataTableByTestId">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetQuestionsDataTableByTestId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionById">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetQuestionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnswersDataTableByQuestionId">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetAnswersDataTableByQuestionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DrawQuestionById">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/DrawQuestionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersCount">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetUsersCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetUsersDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IIsLifeGood">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/IIsLifeGood" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUserTest">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/addUserTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTutorsDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetTutorsDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetGroupsDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCTS">
+    <wsdl:port name="ep1" binding="tns:ep1">
+      <soap12:address location="net.tcp://127.0.0.1:11001/servicects/ep1" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://127.0.0.1:11001/servicects/ep1</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>Tanya-PC\Таня</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
