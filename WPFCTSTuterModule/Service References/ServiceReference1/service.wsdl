@@ -107,6 +107,12 @@
   <wsdl:message name="IServiceCTS_addUserTest_OutputMessage">
     <wsdl:part name="parameters" element="tns:addUserTestResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceCTS_delUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:delUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_delUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceCTS">
     <wsdl:operation name="GetSubjectsDataTable">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetSubjectsDataTable" message="tns:IServiceCTS_GetSubjectsDataTable_InputMessage" />
@@ -151,6 +157,10 @@
     <wsdl:operation name="addUserTest">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addUserTest" message="tns:IServiceCTS_addUserTest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addUserTestResponse" message="tns:IServiceCTS_addUserTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/delUser" message="tns:IServiceCTS_delUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/delUserResponse" message="tns:IServiceCTS_delUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ep1" type="tns:IServiceCTS">
@@ -256,6 +266,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="delUser">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/delUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceCTS">
     <wsdl:port name="ep1" binding="tns:ep1">
@@ -263,7 +282,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://127.0.0.1:11001/servicects/ep1</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>samsung\denis</Upn>
+          <Upn>student@step.lan</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

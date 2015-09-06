@@ -39,5 +39,7 @@ namespace ServerModule
         bool IIsLifeGood();
         [OperationContract]
         void addUserTest(int id_user, int id_test, int numberOfTries, float mark, bool ifAvailable, DateTime testTime, bool canSkip, bool canBack, int testContinuesTime);
+        [OperationContract]
+        void delUser(int id);
     }
 }
