@@ -193,7 +193,7 @@
                                 <Button Grid.Row="2" Grid.Column="0">
                                     Блокировка пользователя
                                 </Button>
-                                <Button Grid.Row="2" Grid.Column="1">
+                                <Button x:Name="delUser" Grid.Row="2" Grid.Column="1" Click="delUser_Click_1">
                                     Удаление пользователя
                                 </Button>
                             </Grid>

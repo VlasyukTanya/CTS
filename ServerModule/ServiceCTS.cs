@@ -112,8 +112,6 @@ namespace ServerModule
             ut.Create();
         }
 
-
-
 //**********************************************************************************************************
         //Subject addSubject(int id_subject, string name_subject);
 

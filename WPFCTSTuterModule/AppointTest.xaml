@@ -1,7 +1,12 @@
 ﻿<Window x:Class="WPFCTSTuterModule.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Window1" Height="300" Width="472" Loaded="Window_Loaded">
+        Title="Window1" Height="356.716" Width="585.433" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -10,59 +15,69 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="155*"></ColumnDefinition>
+            <ColumnDefinition Width="84*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="155*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0">
             <Label x:Name="col1" Content="Id"></Label>
             <Label x:Name="col2" Content="Имя"></Label>
         </StackPanel>
-        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" x:Name="showSubj">
+        <ListView Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" x:Name="showSubj" SelectionChanged="showSubj_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=id}" Header="Id" Width="40" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=name}" Header="Subject" Width="200" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=name}" Header="Subject" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Grid.Row="0" Grid.Column="1">
+        <ListView Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" x:Name="showTest" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=id}" Header="Id" Width="40" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=name}" Header="Test" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="0" Grid.Column="3">
             <Label x:Name="lab3" Content="К-во попыток"></Label>
             <ComboBox x:Name="numOfTries" SelectedValuePath="Content">
                 <ComboBoxItem>1</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>    
+                <ComboBoxItem>3</ComboBoxItem>
             </ComboBox>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="3">
             <Label x:Name="lab4" Content="Тест открыт от даты:"></Label>
             <DatePicker x:Name="dp" ></DatePicker>
             <DockPanel HorizontalAlignment="Left" Margin="0, 5, 0, 0">
                 <ComboBox x:Name="combo_hours" Width="40" SelectedIndex="0" SelectedValuePath="Content">
-                <ComboBoxItem>00</ComboBoxItem>
-                <ComboBoxItem>01</ComboBoxItem>
-                <ComboBoxItem>02</ComboBoxItem>
-                <ComboBoxItem>03</ComboBoxItem>
-                <ComboBoxItem>04</ComboBoxItem>
-                <ComboBoxItem>05</ComboBoxItem>
-                <ComboBoxItem>06</ComboBoxItem>
-                <ComboBoxItem>07</ComboBoxItem>
-                <ComboBoxItem>08</ComboBoxItem>
-                <ComboBoxItem>09</ComboBoxItem>
-                <ComboBoxItem>10</ComboBoxItem>
-                <ComboBoxItem>11</ComboBoxItem>
-                <ComboBoxItem>12</ComboBoxItem>
-                <ComboBoxItem>13</ComboBoxItem>
-                <ComboBoxItem>14</ComboBoxItem>
-                <ComboBoxItem>15</ComboBoxItem>
-                <ComboBoxItem>16</ComboBoxItem>
-                <ComboBoxItem>17</ComboBoxItem>
-                <ComboBoxItem>18</ComboBoxItem>
-                <ComboBoxItem>19</ComboBoxItem>
-                <ComboBoxItem>20</ComboBoxItem>
-                <ComboBoxItem>21</ComboBoxItem>
-                <ComboBoxItem>22</ComboBoxItem>
-                <ComboBoxItem>23</ComboBoxItem>
-                <ComboBoxItem>24</ComboBoxItem>
-            </ComboBox>
+                    <ComboBoxItem>00</ComboBoxItem>
+                    <ComboBoxItem>01</ComboBoxItem>
+                    <ComboBoxItem>02</ComboBoxItem>
+                    <ComboBoxItem>03</ComboBoxItem>
+                    <ComboBoxItem>04</ComboBoxItem>
+                    <ComboBoxItem>05</ComboBoxItem>
+                    <ComboBoxItem>06</ComboBoxItem>
+                    <ComboBoxItem>07</ComboBoxItem>
+                    <ComboBoxItem>08</ComboBoxItem>
+                    <ComboBoxItem>09</ComboBoxItem>
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>11</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                    <ComboBoxItem>13</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                    <ComboBoxItem>15</ComboBoxItem>
+                    <ComboBoxItem>16</ComboBoxItem>
+                    <ComboBoxItem>17</ComboBoxItem>
+                    <ComboBoxItem>18</ComboBoxItem>
+                    <ComboBoxItem>19</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                    <ComboBoxItem>21</ComboBoxItem>
+                    <ComboBoxItem>22</ComboBoxItem>
+                    <ComboBoxItem>23</ComboBoxItem>
+                    <ComboBoxItem>24</ComboBoxItem>
+                </ComboBox>
                 <Label>:</Label>
                 <ComboBox x:Name="combo_min" Width="40" SelectedIndex="0" SelectedValuePath="Content">
                     <ComboBoxItem>00</ComboBoxItem>
@@ -74,15 +89,15 @@
                 </ComboBox>
             </DockPanel>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <StackPanel Grid.Row="2" Grid.Column="3">
             <Label>Длительность:</Label>
             <DockPanel HorizontalAlignment="Left">
                 <TextBox x:Name="tb_hours">00</TextBox>
-            <Label> ч </Label>
-            <TextBox x:Name="tb_min">00</TextBox>
-            <Label> мин </Label>
+                <Label>ч</Label>
+                <TextBox x:Name="tb_min">00</TextBox>
+                <Label>мин</Label>
             </DockPanel>
         </StackPanel>
-        <Button Grid.Row="3" Grid.Column="1" x:Name="button_appoint" Content="Назначить" Margin="10" Click="button_appoint_Click"></Button>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="button_appoint" Content="Назначить" Margin="10" Click="button_appoint_Click"></Button>
     </Grid>
 </Window>

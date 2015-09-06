@@ -182,6 +182,18 @@ namespace WPFCTSTuterModule
 
         }
 
+        private void delUser_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (nameOfStudent == "")
+            {
+                MessageBox.Show("Выберите пользователя, имя которого нужно удалить");
+            }
+            else
+            {
+
+            }
+        }
+
 
     }
 
