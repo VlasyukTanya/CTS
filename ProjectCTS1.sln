@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
+>>>>>>> dev1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSLibrary", "CTSLibrary\CTSLibrary.csproj", "{1E91EEDF-75BC-4E25-B105-28B3C00213E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSAdminModule", "CTSAdminModule\CTSAdminModule.csproj", "{2C6EADDA-5806-4F04-AFD5-4454AF72AF98}"
@@ -18,6 +21,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerModule", "ServerModule\ServerModule.csproj", "{639D1446-1E61-403A-B983-AD497C965976}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFCTSTuterModule", "WPFCTSTuterModule\WPFCTSTuterModule.csproj", "{2A0224EB-1687-4609-B6DE-4965F4C3C7C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCTSUserModule", "WpfCTSUserModule\WpfCTSUserModule.csproj", "{7A022127-A539-4A79-A13C-E3305200C76F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCTSAdminModule", "CTS1\WpfCTSAdminModule\WpfCTSAdminModule.csproj", "{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "DBLibrary\DBLibrary.csproj", "{D3F0DF70-F277-4614-A250-DFF3E53A4041}"
 EndProject
@@ -61,6 +68,14 @@ Global
 		{2A0224EB-1687-4609-B6DE-4965F4C3C7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A0224EB-1687-4609-B6DE-4965F4C3C7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A0224EB-1687-4609-B6DE-4965F4C3C7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A022127-A539-4A79-A13C-E3305200C76F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A022127-A539-4A79-A13C-E3305200C76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A022127-A539-4A79-A13C-E3305200C76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A022127-A539-4A79-A13C-E3305200C76F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47DDBA8E-4E9C-4063-9C0B-3EC6678BDF18}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3F0DF70-F277-4614-A250-DFF3E53A4041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3F0DF70-F277-4614-A250-DFF3E53A4041}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3F0DF70-F277-4614-A250-DFF3E53A4041}.Release|Any CPU.ActiveCfg = Release|Any CPU

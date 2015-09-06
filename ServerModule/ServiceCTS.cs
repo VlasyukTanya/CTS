@@ -112,5 +112,57 @@ namespace ServerModule
             ut.Create();
         }
 
+//**********************************************************************************************************
+        //Subject addSubject(int id_subject, string name_subject);
+
+        //void deleteSubject(int id_subject);
+
+        //Subject updateSubject(int id_subject, string name_subject);
+
+        public DataTable GetGroupsDataTable()
+        {
+            try
+            {
+                DataTable dt = Group.GetGroupsDataTable(db);
+                dt.TableName = "groups";
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
+            }
+        }
+
+/*
+        public Group addGroup(int id_group, string name_group, string registrationDate_group)
+        {
+            return new Group(db, id_group, name_group, registrationDate_group).Create();
+        }
+
+        public void deleteGroup(int id_group)
+        {
+            Group gr = new Group(db);
+            gr.Delete();
+        }
+
+        public Group updateGroup(int id_group, string name_group, string registrationDate_group)
+        {
+            Group gr = new Group(db, id_group, name_group, registrationDate_group);
+            return gr.Update();
+        }
+*/
+        public DataTable GetTutorsDataTable()
+        {
+            DataTable dt = User.GetTutorsDataTable(db);
+            dt.TableName = "tutors";
+            return dt;
+        }
+
+        //User addTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string registrationDate, int roleId, int groupId);
+
+        //void deleteTutor(int id_user);
+
+        //User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);
     }
 }
