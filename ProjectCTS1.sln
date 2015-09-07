@@ -1,11 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-# Visual Studio 2012
->>>>>>> dev1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSLibrary", "CTSLibrary\CTSLibrary.csproj", "{1E91EEDF-75BC-4E25-B105-28B3C00213E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSTuterModule", "CTSTuterModule\CTSTuterModule.csproj", "{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}"
@@ -27,8 +24,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBLibrary", "DBLibrary\DBLibrary.csproj", "{D3F0DF70-F277-4614-A250-DFF3E53A4041}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBExample", "DBExample\DBExample.csproj", "{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCTSUserModule", "WpfCTSUserModule\WpfCTSUserModule.csproj", "{7A022127-A539-4A79-A13C-E3305200C76F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,10 +75,6 @@ Global
 		{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D947F4E8-5A32-45E9-8C0A-1CFD263891C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A022127-A539-4A79-A13C-E3305200C76F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A022127-A539-4A79-A13C-E3305200C76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A022127-A539-4A79-A13C-E3305200C76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A022127-A539-4A79-A13C-E3305200C76F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
