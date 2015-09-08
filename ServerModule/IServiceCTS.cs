@@ -49,6 +49,9 @@ namespace ServerModule
         void delUser(int id);
 
         [OperationContract]
+        void addUser(string name, string passwd, string realName, string email, int roleId, int groupId);
+
+        [OperationContract]
         DataTable GetTutorsDataTable();
 
         [OperationContract]

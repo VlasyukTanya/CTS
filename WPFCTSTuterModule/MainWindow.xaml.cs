@@ -27,22 +27,23 @@ namespace WPFCTSTuterModule
         ServiceReference1.ServiceCTSClient proxy = new ServiceReference1.ServiceCTSClient();
         //for combobox to use in another events
         List<string> listOfNames = new List<string>();
+        List<string> listOfGroups = new List<string>();
         public static int idOfStudent;
+        public static int idOfGroup;
         public static string nameOfStudent;
+        public static string nameOfGroup;
 
         public MainWindow()
         {
             InitializeComponent();
             nameOfStudent = "";
+            nameOfGroup = "";
             idOfStudent = -1;
             //ServiceCTSClient proxy = new ServiceCTSClient();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
- //           proxy.delUser(57);
-            
+        {            
             DataTable dt = new DataTable();
             try
             {
@@ -160,6 +161,13 @@ namespace WPFCTSTuterModule
                         selectUser_combo.Items.Add(dt.Rows[i]["real_name"].ToString());
                         listOfNames.Add(dt.Rows[i]["real_name"].ToString());
                     }
+
+                    dt = proxy.GetGroupsDataTable();
+                    for (int i = 0; i<dt.Rows.Count; i++)
+                    {
+                        selectGroup_combo.Items.Add(dt.Rows[i]["name"].ToString());
+                        listOfGroups.Add(dt.Rows[i]["name"].ToString());
+                    }
                 }
             }
         }
@@ -182,7 +190,6 @@ namespace WPFCTSTuterModule
                 catch (Exception err)
                 { MessageBox.Show(err.Message); }
             }
-
         }
 
         private void delUser_Click_1(object sender, RoutedEventArgs e)
@@ -194,6 +201,62 @@ namespace WPFCTSTuterModule
             else
             {
                 proxy.delUser(idOfStudent);
+            }
+        }
+
+        private void addUser_Click_1(object sender, RoutedEventArgs e)
+        {
+            if ((t1.Text=="мой логин")||(t1.Text==""))
+            {
+                MessageBox.Show("Введите логин!");
+            }
+            else if ((t2.Text=="мой пароль")||(t2.Text==""))
+            {
+                MessageBox.Show("Введите пароль!");
+            }
+            else if ((t3.Text=="мое имя")||(t3.Text==""))
+            {
+                MessageBox.Show("Введите имя!");
+            }
+            else if ((t4.Text == "мой e-mail") || (t4.Text == ""))
+            {
+                MessageBox.Show("Введите e-mail!");
+            }
+            else if (nameOfGroup=="")
+            {
+                MessageBox.Show("Выберите группу!");
+            }
+            else 
+            {
+                string newlogin = t1.Text;
+                string newpassw = t2.Text;
+                string newname = t3.Text;
+                string newemail = t4.Text;
+                string newinfo = t5.Text;
+                string newgroup = nameOfGroup;
+
+                proxy.addUser(newlogin, newpassw, newname, newemail, 3, idOfGroup);
+
+                MessageBox.Show("Студент добавлен!");
+            }
+        }
+
+        private void selectGroup_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int ind = selectGroup_combo.SelectedIndex;
+            if (ind > -1)
+            {
+                nameOfGroup = selectGroup_combo.SelectedItem.ToString();
+                DataTable dt = proxy.GetGroupsDataTable();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (nameOfGroup == dt.Rows[i]["name"].ToString())
+                        idOfGroup = Convert.ToInt32(dt.Rows[i]["id"]);
+                }
+            }
+            else
+            {
+                nameOfStudent = "";
             }
         }
 

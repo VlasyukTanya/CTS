@@ -231,24 +231,24 @@
                                 <Label Grid.Row="5" Grid.Column="0">
                                     Группа
                                 </Label>
-                                <TextBox Grid.Row="0" Grid.Column="1">
+                                <TextBox x:Name="t1" Grid.Row="0" Grid.Column="1" FontStyle="Italic">
                                     мой логин
                                 </TextBox>
-                                <TextBox Grid.Row="1" Grid.Column="1">
+                                <TextBox x:Name="t2" Grid.Row="1" Grid.Column="1" FontStyle="Italic">
                                     мой пароль
                                 </TextBox>
-                                <TextBox Grid.Row="2" Grid.Column="1">
+                                <TextBox x:Name="t3" Grid.Row="2" Grid.Column="1" FontStyle="Italic">
                                     мое имя
                                 </TextBox>
-                                <TextBox Grid.Row="3" Grid.Column="1">
+                                <TextBox x:Name="t4" Grid.Row="3" Grid.Column="1" FontStyle="Italic">
                                     мой e-mail
                                 </TextBox>
-                                <TextBox Grid.Row="4" Grid.Column="1">
+                                <TextBox x:Name="t5" Grid.Row="4" Grid.Column="1" FontStyle="Italic">
                                     инфо
                                 </TextBox>
-                                <ComboBox Grid.Row="5" Grid.Column="1"></ComboBox>
-                                <Button Grid.Row="4" Grid.Column="2" Grid.RowSpan="2" Width="150">
-                                    <TextBlock TextWrapping="Wrap">Добавление пользователя</TextBlock>
+                                <ComboBox x:Name="selectGroup_combo" Grid.Row="5" Grid.Column="1" SelectionChanged="selectGroup_combo_SelectionChanged"></ComboBox>
+                                <Button x:Name="addUser" Grid.Row="4" Grid.Column="2" Grid.RowSpan="2" Width="150" Click="addUser_Click_1">
+                                    <TextBlock TextWrapping="Wrap">Добавление студента</TextBlock>
 
                                 </Button>
                             </Grid>
