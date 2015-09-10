@@ -130,6 +130,13 @@ namespace ServerModule
             newUser.Create();
         }
 
+        public DataTable GetTestsForUser(int userId)
+        {
+            DataTable dt = User_test.GetAppointedTestForUser(db, userId);
+            dt.TableName = "testsForUser";
+            return dt;
+        }
+
 //**********************************************************************************************************
         //Subject addSubject(int id_subject, string name_subject);
 

@@ -187,7 +187,7 @@
                                 <Button x:Name="AppointTest" Grid.Row="1" Grid.Column="0" Click="AppointTest_Click">
                                     Назначение тестов
                                 </Button>
-                                <Button Grid.Row="1" Grid.Column="1">
+                                <Button x:Name="changeGroup" Grid.Row="1" Grid.Column="1" Click="changeGroup_Click_1">
                                     Перенесение в другую группу
                                 </Button>
                                 <Button Grid.Row="2" Grid.Column="0">
@@ -254,8 +254,26 @@
                             </Grid>
 
                         </GroupBox>
-<!--                        <DataGrid Height="200" ItemsSource="{Binding}"  Name="usersGrid"/>-->
-                        <DataGrid Height="200" ItemsSource="{Binding}"  Name="usersGrid"/>
+                        <GroupBox Margin="5" Background="White">
+                            <Label>Ниже можно просмотреть назначенные тесты для каждого пользователя</Label>
+                        </GroupBox>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                        <DataGrid Grid.Row="0" Grid.Column="0" Name="usersGrid" AutoGenerateColumns="False" Margin="5">
+                            <DataGrid.Columns>
+                             <DataGridTextColumn Header="id теста" Binding="{Binding test_id}" />
+                             <DataGridTextColumn Header="оценка" Binding="{Binding mark}" />
+                             <DataGridTextColumn Header="начало теста" Binding="{Binding test_time}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Grid.Row="0" Grid.Column="1" Height="50" Width="100" Margin="0, 0, 0, 5" x:Name="update" VerticalAlignment="Bottom" Click="update_Click">Обновить</Button>
+                        </Grid>
                     </StackPanel>
                 </TabItem.Content>
 

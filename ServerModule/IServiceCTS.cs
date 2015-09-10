@@ -57,6 +57,9 @@ namespace ServerModule
         [OperationContract]
         DataTable GetGroupsDataTable();
 
+        [OperationContract]
+        DataTable GetTestsForUser(int userId);
+
         //[OperationContract]
         //Subject addSubject(int id_subject, string name_subject);
 
