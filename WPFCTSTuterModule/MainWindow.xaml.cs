@@ -141,6 +141,16 @@ namespace WPFCTSTuterModule
                     if (nameOfStudent == dt.Rows[i]["real_name"].ToString())
                         idOfStudent = Convert.ToInt32(dt.Rows[i]["id"]);
                 }
+                try 
+                { 
+                    DataTable dt1 = proxy.GetTestsForUser(idOfStudent);
+                    if (dt1!=null)
+                        usersGrid.ItemsSource = dt1.DefaultView;
+                }
+                catch (Exception err)
+                { 
+                    MessageBox.Show(err.Message); 
+                }
             }
             else
             {
@@ -232,6 +242,7 @@ namespace WPFCTSTuterModule
                 string newpassw = t2.Text;
                 string newname = t3.Text;
                 string newemail = t4.Text;
+                //the following line is not used
                 string newinfo = t5.Text;
                 string newgroup = nameOfGroup;
 
@@ -258,6 +269,25 @@ namespace WPFCTSTuterModule
             {
                 nameOfStudent = "";
             }
+        }
+
+        private void update_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataTable dt1 = proxy.GetTestsForUser(idOfStudent);
+                if (dt1 != null)
+                    usersGrid.ItemsSource = dt1.DefaultView;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void changeGroup_Click_1(object sender, RoutedEventArgs e)
+        {
+            //изменение группы для пользователя
         }
 
 

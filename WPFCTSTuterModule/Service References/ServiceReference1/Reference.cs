@@ -104,6 +104,12 @@ namespace WPFCTSTuterModule.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/GetGroupsDataTable", ReplyAction="http://tempuri.org/IServiceCTS/GetGroupsDataTableResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> GetGroupsDataTableAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/GetTestsForUser", ReplyAction="http://tempuri.org/IServiceCTS/GetTestsForUserResponse")]
+        System.Data.DataTable GetTestsForUser(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/GetTestsForUser", ReplyAction="http://tempuri.org/IServiceCTS/GetTestsForUserResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetTestsForUserAsync(int userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -251,6 +257,14 @@ namespace WPFCTSTuterModule.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> GetGroupsDataTableAsync() {
             return base.Channel.GetGroupsDataTableAsync();
+        }
+        
+        public System.Data.DataTable GetTestsForUser(int userId) {
+            return base.Channel.GetTestsForUser(userId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetTestsForUserAsync(int userId) {
+            return base.Channel.GetTestsForUserAsync(userId);
         }
     }
 }
