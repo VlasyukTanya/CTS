@@ -117,8 +117,6 @@ namespace ServerModule
             User user = new User(db);
             (user.Get(id)).Delete();
         }
-<<<<<<< HEAD
-=======
 
         public void addUser(string name, string passwd, string realName, string email, int roleId, int groupId)
         {
@@ -138,7 +136,6 @@ namespace ServerModule
             dt.TableName = "testsForUser";
             return dt;
         }
->>>>>>> 2444170af6695bc1c500d934310d5e1fa4d1156e
 
 //**********************************************************************************************************
         public void addSubject(string name_subject)
@@ -200,13 +197,11 @@ namespace ServerModule
             new User(db, name, passwd, realName, email, additionalContacts, roleId, groupId).Create(); //надо проверить процедуру dbo.users_add, в методе не указывается дата регистрации
         }
 
-<<<<<<< HEAD
         public User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string registrationDate, int roleId, int groupId)
         {
             return new User(db, id, name, passwd, realName, email, additionalContacts, registrationDate, roleId, groupId).Update();
         }
-=======
+
         //User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);
->>>>>>> 2444170af6695bc1c500d934310d5e1fa4d1156e
     }
 }

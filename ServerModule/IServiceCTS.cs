@@ -58,17 +58,13 @@ namespace ServerModule
         DataTable GetGroupsDataTable();
 
         [OperationContract]
-<<<<<<< HEAD
         void addSubject(string name_subject);
 
         [OperationContract]
         void deleteSubject(int id_subject);
-=======
-        DataTable GetTestsForUser(int userId);
 
-        //[OperationContract]
-        //Subject addSubject(int id_subject, string name_subject);
->>>>>>> 2444170af6695bc1c500d934310d5e1fa4d1156e
+        [OperationContract]
+        DataTable GetTestsForUser(int userId);
 
         [OperationContract]
         void updateSubject(int id_subject, string name_subject);
