@@ -113,6 +113,30 @@
   <wsdl:message name="IServiceCTS_delUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:delUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceCTS_addUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTutorsDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorsDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTutorsDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTutorsDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetGroupsDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsDataTable" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetGroupsDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTestsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_GetTestsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestsForUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceCTS">
     <wsdl:operation name="GetSubjectsDataTable">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetSubjectsDataTable" message="tns:IServiceCTS_GetSubjectsDataTable_InputMessage" />
@@ -161,6 +185,22 @@
     <wsdl:operation name="delUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/delUser" message="tns:IServiceCTS_delUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/delUserResponse" message="tns:IServiceCTS_delUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addUser" message="tns:IServiceCTS_addUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addUserResponse" message="tns:IServiceCTS_addUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTutorsDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetTutorsDataTable" message="tns:IServiceCTS_GetTutorsDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetTutorsDataTableResponse" message="tns:IServiceCTS_GetTutorsDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsDataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetGroupsDataTable" message="tns:IServiceCTS_GetGroupsDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetGroupsDataTableResponse" message="tns:IServiceCTS_GetGroupsDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestsForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetTestsForUser" message="tns:IServiceCTS_GetTestsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetTestsForUserResponse" message="tns:IServiceCTS_GetTestsForUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ep1" type="tns:IServiceCTS">
@@ -275,6 +315,42 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/addUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTutorsDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetTutorsDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsDataTable">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetGroupsDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestsForUser">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetTestsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceCTS">
     <wsdl:port name="ep1" binding="tns:ep1">
@@ -282,7 +358,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://127.0.0.1:11001/servicects/ep1</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>student@step.lan</Upn>
+          <Upn>samsung\denis</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

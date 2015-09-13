@@ -1,6 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+<<<<<<< HEAD
 # Visual Studio 2012
+=======
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+>>>>>>> 2444170af6695bc1c500d934310d5e1fa4d1156e
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSLibrary", "CTSLibrary\CTSLibrary.csproj", "{1E91EEDF-75BC-4E25-B105-28B3C00213E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTSTuterModule", "CTSTuterModule\CTSTuterModule.csproj", "{BD31C93C-B803-4AC2-A82A-8A3C86A1DA8F}"

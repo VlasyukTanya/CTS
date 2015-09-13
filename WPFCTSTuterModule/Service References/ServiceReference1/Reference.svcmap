@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fc543ce7-f229-4520-9bb5-d2294ecd8606" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="628bf945-181c-4ee3-a82d-0ed4b4125254" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="net.tcp://127.0.0.1:11001/servicects" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="71d02685-0438-473f-93d9-c763faa821da" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="23846a53-a3d2-41b1-bb07-7e791cfee769" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5fc2234a-50bc-4500-a06a-939b06f8d00e" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
-    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="20430424-6a3b-450b-9dc6-2d5027c7b3d6" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
-    <MetadataFile FileName="DBLibrary.xsd" MetadataType="Schema" ID="85ad60ff-4fb8-4b60-bd6e-0c0af1f439c6" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f62580c1-ed8c-4c1e-9efd-93bc1dd608e8" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="28a4f4e1-c7af-4369-a817-2c9f4eb084e9" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="fad2f4f0-b15f-4615-b952-2bd52d360a9f" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="f29f43ed-219e-4bff-b2e2-21a1fa05c07e" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
+    <MetadataFile FileName="DBLibrary.xsd" MetadataType="Schema" ID="f5934c76-7021-47b2-9363-a25462ff77b6" SourceId="1" SourceUrl="net.tcp://127.0.0.1:11001/servicects" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -96,5 +96,10 @@ namespace DBLibrary
             this.db.ExecuteNonQuery(String.Format("EXECUTE InsertOfUsers_tests {0}, {1}, {2}, {3}, {4}, '{5}', {6}, {7}, {8}", this.id_user, this.id_test, this.numberOfTries, this.mark, this.ifAvailable ? 1 : 0, this.testTime, this.canSkip ? 1 : 0, this.canBack ? 1 : 0, this.testContinuesTime));
 //            this.db.ExecuteNonQuery(String.Format("INSERT INTO users_tests (user_id, test_id, tries_num, mark, available, test_time, can_skip, can_back, available_time) VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8})", this.id_user, this.id_test, this.numberOfTries, this.mark, this.ifAvailable ? 1 : 0, this.testTime, this.canSkip ? 1 : 0, this.canBack ? 1 : 0, this.testContinuesTime));
         }
+
+        static public DataTable GetAppointedTestForUser(DBDriver db, int userId)
+        {
+            return db.ExecuteQuery(String.Format(@"SELECT test_id, mark, test_time FROM users_tests WHERE user_id = {0}", userId));
+        }
     }
 }

@@ -92,9 +92,9 @@
         <StackPanel Grid.Row="2" Grid.Column="3">
             <Label>Длительность:</Label>
             <DockPanel HorizontalAlignment="Left">
-                <TextBox x:Name="tb_hours">00</TextBox>
+                <TextBox x:Name="tb_hours">0</TextBox>
                 <Label>ч</Label>
-                <TextBox x:Name="tb_min">00</TextBox>
+                <TextBox x:Name="tb_min">0</TextBox>
                 <Label>мин</Label>
             </DockPanel>
         </StackPanel>

@@ -49,16 +49,26 @@ namespace ServerModule
         void delUser(int id);
 
         [OperationContract]
+        void addUser(string name, string passwd, string realName, string email, int roleId, int groupId);
+
+        [OperationContract]
         DataTable GetTutorsDataTable();
 
         [OperationContract]
         DataTable GetGroupsDataTable();
 
         [OperationContract]
+<<<<<<< HEAD
         void addSubject(string name_subject);
 
         [OperationContract]
         void deleteSubject(int id_subject);
+=======
+        DataTable GetTestsForUser(int userId);
+
+        //[OperationContract]
+        //Subject addSubject(int id_subject, string name_subject);
+>>>>>>> 2444170af6695bc1c500d934310d5e1fa4d1156e
 
         [OperationContract]
         void updateSubject(int id_subject, string name_subject);
