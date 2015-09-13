@@ -81,6 +81,12 @@ namespace WpfCTSAdminModule.ServiceReferenceCTS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addUserTest", ReplyAction="http://tempuri.org/IServiceCTS/addUserTestResponse")]
         System.Threading.Tasks.Task addUserTestAsync(int id_user, int id_test, int numberOfTries, float mark, bool ifAvailable, System.DateTime testTime, bool canSkip, bool canBack, int testContinuesTime);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/delUser", ReplyAction="http://tempuri.org/IServiceCTS/delUserResponse")]
+        void delUser(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/delUser", ReplyAction="http://tempuri.org/IServiceCTS/delUserResponse")]
+        System.Threading.Tasks.Task delUserAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/GetTutorsDataTable", ReplyAction="http://tempuri.org/IServiceCTS/GetTutorsDataTableResponse")]
         System.Data.DataTable GetTutorsDataTable();
         
@@ -92,6 +98,54 @@ namespace WpfCTSAdminModule.ServiceReferenceCTS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/GetGroupsDataTable", ReplyAction="http://tempuri.org/IServiceCTS/GetGroupsDataTableResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> GetGroupsDataTableAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addSubject", ReplyAction="http://tempuri.org/IServiceCTS/addSubjectResponse")]
+        void addSubject(string name_subject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addSubject", ReplyAction="http://tempuri.org/IServiceCTS/addSubjectResponse")]
+        System.Threading.Tasks.Task addSubjectAsync(string name_subject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/deleteSubject", ReplyAction="http://tempuri.org/IServiceCTS/deleteSubjectResponse")]
+        void deleteSubject(int id_subject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/deleteSubject", ReplyAction="http://tempuri.org/IServiceCTS/deleteSubjectResponse")]
+        System.Threading.Tasks.Task deleteSubjectAsync(int id_subject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/updateSubject", ReplyAction="http://tempuri.org/IServiceCTS/updateSubjectResponse")]
+        void updateSubject(int id_subject, string name_subject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/updateSubject", ReplyAction="http://tempuri.org/IServiceCTS/updateSubjectResponse")]
+        System.Threading.Tasks.Task updateSubjectAsync(int id_subject, string name_subject);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addGroup", ReplyAction="http://tempuri.org/IServiceCTS/addGroupResponse")]
+        void addGroup(string name_group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addGroup", ReplyAction="http://tempuri.org/IServiceCTS/addGroupResponse")]
+        System.Threading.Tasks.Task addGroupAsync(string name_group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/deleteGroup", ReplyAction="http://tempuri.org/IServiceCTS/deleteGroupResponse")]
+        void deleteGroup(int id_group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/deleteGroup", ReplyAction="http://tempuri.org/IServiceCTS/deleteGroupResponse")]
+        System.Threading.Tasks.Task deleteGroupAsync(int id_group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/updateGroup", ReplyAction="http://tempuri.org/IServiceCTS/updateGroupResponse")]
+        void updateGroup(int id_group, string name_group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/updateGroup", ReplyAction="http://tempuri.org/IServiceCTS/updateGroupResponse")]
+        System.Threading.Tasks.Task updateGroupAsync(int id_group, string name_group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addTutor", ReplyAction="http://tempuri.org/IServiceCTS/addTutorResponse")]
+        void addTutor(string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, int roleId, int groupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/addTutor", ReplyAction="http://tempuri.org/IServiceCTS/addTutorResponse")]
+        System.Threading.Tasks.Task addTutorAsync(string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, int roleId, int groupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/updateTutor", ReplyAction="http://tempuri.org/IServiceCTS/updateTutorResponse")]
+        DBLibrary.User updateTutor(int id, string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCTS/updateTutor", ReplyAction="http://tempuri.org/IServiceCTS/updateTutorResponse")]
+        System.Threading.Tasks.Task<DBLibrary.User> updateTutorAsync(int id, string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -209,6 +263,14 @@ namespace WpfCTSAdminModule.ServiceReferenceCTS {
             return base.Channel.addUserTestAsync(id_user, id_test, numberOfTries, mark, ifAvailable, testTime, canSkip, canBack, testContinuesTime);
         }
         
+        public void delUser(int id) {
+            base.Channel.delUser(id);
+        }
+        
+        public System.Threading.Tasks.Task delUserAsync(int id) {
+            return base.Channel.delUserAsync(id);
+        }
+        
         public System.Data.DataTable GetTutorsDataTable() {
             return base.Channel.GetTutorsDataTable();
         }
@@ -223,6 +285,70 @@ namespace WpfCTSAdminModule.ServiceReferenceCTS {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> GetGroupsDataTableAsync() {
             return base.Channel.GetGroupsDataTableAsync();
+        }
+        
+        public void addSubject(string name_subject) {
+            base.Channel.addSubject(name_subject);
+        }
+        
+        public System.Threading.Tasks.Task addSubjectAsync(string name_subject) {
+            return base.Channel.addSubjectAsync(name_subject);
+        }
+        
+        public void deleteSubject(int id_subject) {
+            base.Channel.deleteSubject(id_subject);
+        }
+        
+        public System.Threading.Tasks.Task deleteSubjectAsync(int id_subject) {
+            return base.Channel.deleteSubjectAsync(id_subject);
+        }
+        
+        public void updateSubject(int id_subject, string name_subject) {
+            base.Channel.updateSubject(id_subject, name_subject);
+        }
+        
+        public System.Threading.Tasks.Task updateSubjectAsync(int id_subject, string name_subject) {
+            return base.Channel.updateSubjectAsync(id_subject, name_subject);
+        }
+        
+        public void addGroup(string name_group) {
+            base.Channel.addGroup(name_group);
+        }
+        
+        public System.Threading.Tasks.Task addGroupAsync(string name_group) {
+            return base.Channel.addGroupAsync(name_group);
+        }
+        
+        public void deleteGroup(int id_group) {
+            base.Channel.deleteGroup(id_group);
+        }
+        
+        public System.Threading.Tasks.Task deleteGroupAsync(int id_group) {
+            return base.Channel.deleteGroupAsync(id_group);
+        }
+        
+        public void updateGroup(int id_group, string name_group) {
+            base.Channel.updateGroup(id_group, name_group);
+        }
+        
+        public System.Threading.Tasks.Task updateGroupAsync(int id_group, string name_group) {
+            return base.Channel.updateGroupAsync(id_group, name_group);
+        }
+        
+        public void addTutor(string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, int roleId, int groupId) {
+            base.Channel.addTutor(name, passwd, realName, email, additionalContacts, roleId, groupId);
+        }
+        
+        public System.Threading.Tasks.Task addTutorAsync(string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, int roleId, int groupId) {
+            return base.Channel.addTutorAsync(name, passwd, realName, email, additionalContacts, roleId, groupId);
+        }
+        
+        public DBLibrary.User updateTutor(int id, string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId) {
+            return base.Channel.updateTutor(id, name, passwd, realName, email, additionalContacts, lastEditDate, roleId, groupId);
+        }
+        
+        public System.Threading.Tasks.Task<DBLibrary.User> updateTutorAsync(int id, string name, string passwd, string realName, string email, DBLibrary.AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId) {
+            return base.Channel.updateTutorAsync(id, name, passwd, realName, email, additionalContacts, lastEditDate, roleId, groupId);
         }
     }
 }

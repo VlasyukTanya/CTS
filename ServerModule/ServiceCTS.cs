@@ -111,20 +111,29 @@ namespace ServerModule
             User_test ut = new User_test(db, id_user, id_test, numberOfTries, mark, ifAvailable, testTime, canSkip, canBack, testContinuesTime);
             ut.Create();
         }
-<<<<<<< HEAD
+
         public void delUser(int id)
         {
             User user = new User(db);
             (user.Get(id)).Delete();
         }
-=======
 
 //**********************************************************************************************************
-        //Subject addSubject(int id_subject, string name_subject);
+        public void addSubject(string name_subject)
+        {
+            new Subject(db, name_subject).Create();
+        }
 
-        //void deleteSubject(int id_subject);
+        public void deleteSubject(int id_subject)
+        {
+            Subject subj = new Subject(db);
+            (subj.Get(id_subject)).Delete();
+        }
 
-        //Subject updateSubject(int id_subject, string name_subject);
+        public void updateSubject(int id_subject, string name_subject)
+        {
+            new Subject(db, id_subject, name_subject).Update();
+        }
 
         public DataTable GetGroupsDataTable()
         {
@@ -141,24 +150,22 @@ namespace ServerModule
             }
         }
 
-/*
-        public Group addGroup(int id_group, string name_group, string registrationDate_group)
+        public void addGroup(string name_group)
         {
-            return new Group(db, id_group, name_group, registrationDate_group).Create();
+            new Group(db, name_group).Create();
         }
 
         public void deleteGroup(int id_group)
         {
             Group gr = new Group(db);
-            gr.Delete();
+            (gr.Get(id_group)).Delete();
         }
 
-        public Group updateGroup(int id_group, string name_group, string registrationDate_group)
+        public void updateGroup(int id_group, string name_group)
         {
-            Group gr = new Group(db, id_group, name_group, registrationDate_group);
-            return gr.Update();
+            new Group(db, id_group, name_group).Update();
         }
-*/
+
         public DataTable GetTutorsDataTable()
         {
             DataTable dt = User.GetTutorsDataTable(db);
@@ -166,11 +173,14 @@ namespace ServerModule
             return dt;
         }
 
-        //User addTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string registrationDate, int roleId, int groupId);
+        public void addTutor(string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, int roleId, int groupId)
+        {
+            new User(db, name, passwd, realName, email, additionalContacts, roleId, groupId).Create(); //надо проверить процедуру dbo.users_add, в методе не указывается дата регистрации
+        }
 
-        //void deleteTutor(int id_user);
-
-        //User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);
->>>>>>> master
+        public User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string registrationDate, int roleId, int groupId)
+        {
+            return new User(db, id, name, passwd, realName, email, additionalContacts, registrationDate, roleId, groupId).Update();
+        }
     }
 }

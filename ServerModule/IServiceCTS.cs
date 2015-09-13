@@ -54,31 +54,28 @@ namespace ServerModule
         [OperationContract]
         DataTable GetGroupsDataTable();
 
-        //[OperationContract]
-        //Subject addSubject(int id_subject, string name_subject);
-
-        //[OperationContract]
-        //void deleteSubject(int id_subject);
-
-        //[OperationContract]
-        //Subject updateSubject(int id_subject, string name_subject);
-/*
         [OperationContract]
-        Group addGroup(int id_group, string name_group, string registrationDate_group);
+        void addSubject(string name_subject);
+
+        [OperationContract]
+        void deleteSubject(int id_subject);
+
+        [OperationContract]
+        void updateSubject(int id_subject, string name_subject);
+
+        [OperationContract]
+        void addGroup(string name_group);
 
         [OperationContract]
         void deleteGroup(int id_group);
 
         [OperationContract]
-        Group updateGroup(int id_group, string name_group, string registrationDate_group);
-*/
-        //[OperationContract]
-        //User addTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string registrationDate, int roleId, int groupId);
+        void updateGroup(int id_group, string name_group);
 
-        //[OperationContract]
-        //void deleteTutor(int id_user);
+        [OperationContract]
+        void addTutor(string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, int roleId, int groupId);
 
-        //[OperationContract]
-        //User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);  
+        [OperationContract]
+        User updateTutor(int id, string name, string passwd, string realName, string email, AdditionalContacts additionalContacts, string lastEditDate, int roleId, int groupId);  
     }
 }

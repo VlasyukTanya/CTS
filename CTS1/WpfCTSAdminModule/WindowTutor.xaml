@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfCTSAdminModule.WindowTutor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WindowTutor" Height="316.918" Width="611.279">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"></RowDefinition>
+            <RowDefinition Height="48*"></RowDefinition>
+            <RowDefinition Height="48*"></RowDefinition>
+            <RowDefinition Height="48*"></RowDefinition>
+            <RowDefinition Height="48*"></RowDefinition>
+            <RowDefinition Height="48*"></RowDefinition>
+            <RowDefinition Height="63*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="84*"></ColumnDefinition>
+            <ColumnDefinition Width="218*"></ColumnDefinition>
+            <ColumnDefinition Width="302*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Name="lRealName" Grid.Row="0" Grid.Column="0" Content="FIO" Margin="7,7,0,7" HorizontalAlignment="Left" Width="48"/>
+        <Label Name="lName" Grid.Row="1" Grid.Column="0" Content="login" Margin="7,7,0,7" HorizontalAlignment="Left" Width="48"/>
+        <Label Name="lEmail" Grid.Row="2" Grid.Column="0" Content="email" Margin="7,7,0,7" HorizontalAlignment="Left" Width="48"/>
+        <Label Name="lSkype" Grid.Row="3" Grid.Column="0" Content="skype" Margin="7" HorizontalAlignment="Left" Width="61"/>
+        <Label Name="lTeleph" Grid.Row="4" Grid.Column="0" Content="tel" Margin="7" HorizontalAlignment="Left" Width="61"/>
+        <Label Name="lGroup" Grid.Row="5" Grid.Column="0" Content="group" Margin="7,7,0,7" HorizontalAlignment="Left" Width="61"/>
+        <TextBox Name="tRealName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Width="500" Margin="7"/>
+        <TextBox Name="tLogin" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="500" Margin="7"/>
+        <TextBox Name="tEmail" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Width="500" Margin="7"/>
+        <TextBox Name="tSkype" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Width="500" Margin="7"/>
+        <TextBox Name="tTeleph" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Width="500" Margin="7"/>
+        <TextBox Name="tGroup" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Width="500" Margin="7"/>
+        <Button Name="Ok" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="OK" Margin="10" Click="Ok_Click"/>
+        <Button Name="Cancel" Grid.Row="6" Grid.Column="2" Content="Cancel" Margin="10" Click="Cancel_Click"/>
+    </Grid>
+</Window>

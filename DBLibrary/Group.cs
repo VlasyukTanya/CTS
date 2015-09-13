@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.Serialization;
+using System.Data.SqlClient;
 
 namespace DBLibrary
 {
     [DataContract]
     public class Group
     {
-        [DataMember]
+        //[DataMember]
         public DBDriver db;
-        [DataMember]
+        //[DataMember]
         public int id;
-        [DataMember]
+        //[DataMember]
         public string name;
-        [DataMember]
+        //[DataMember]
         public string registrationDate;
-        [DataMember]
+        //[DataMember]
         public string lastEditDate;
 
         public int Id
@@ -52,6 +53,19 @@ namespace DBLibrary
             this.db = db;
         }
 
+        public Group(DBDriver db, string name)
+        {
+            this.db = db;
+            this.name = name;
+        }
+
+        public Group(DBDriver db, int id, string name)
+        {
+            this.db = db;
+            this.id = id;
+            this.name = name;
+        }
+
         public Group(DBDriver db, int id, string name, string registrationDate)
         {
             this.db = db;
@@ -69,23 +83,29 @@ namespace DBLibrary
              this.lastEditDate = lastEditDate;
         }
 
-        public Group Create()
+        public void Create()
         {
-            DataTable res = this.db.ExecuteQuery(String.Format("EXECUTE InsertOfGroups N'{0}'", this.name, this.registrationDate));
-            return new Group(this.db, (int)res.Rows[0]["id"], this.name, this.registrationDate);
+            this.db.ExecuteNonQuery(String.Format("EXECUTE groups_add N'{0}'", this.name));
         }
 
         public Group Get(int id)
         {
-            DataTable res = this.db.ExecuteQuery(String.Format("SELECT * FROM groups WHERE id = {0}", id));
-            return new Group(this.db, id, (string)res.Rows[0]["name"], (string)res.Rows[0]["registrationDate"], (string)res.Rows[0]["lastEditDate"]);
+            DataTable result = this.db.ExecuteQuery(String.Format("SELECT * FROM groups WHERE id = {0}", id));
+            if (result.Rows.Count < 1)
+                return null;
+            return new Group(
+                this.db,
+                (int)result.Rows[0]["id"],
+                (string)result.Rows[0]["name"], 
+                ((DateTime)result.Rows[0]["registration_date"]).ToString(),
+                !result.Rows[0].IsNull("last_edit_date") ? ((DateTime)result.Rows[0]["last_edit_date"]).ToString() : null);
         }
 
         static public DataTable GetGroupsDataTable(DBDriver db)
         {
             try
             {
-                return db.ExecuteQuery(String.Format(@"SELECT * FROM groups"));
+                return db.ExecuteQuery(String.Format(@"SELECT * FROM groups order by id"));
             }
             catch(Exception e)
             {
@@ -94,15 +114,25 @@ namespace DBLibrary
             }         
         }
 
-        public Group Update()
+        public void Update()
         {
-            DataTable res = this.db.ExecuteQuery(String.Format("EXECUTE groups_update {0}, N'{1}', N'{2}'", this.id, this.name, this.registrationDate));
-            return new Group(this.db, this.id, this.name, this.registrationDate, ((DateTime)res.Rows[0]["EDITDATE"]).ToString());
+            this.db.ExecuteNonQuery(String.Format("EXECUTE groups_update {0}, N'{1}'", this.id, this.name));
         }
 
         public void Delete()
         {
-            this.db.ExecuteNonQuery(String.Format("DELETE FROM groups WHERE id = {0}", this.id));
+            try
+            {
+                db.ExecuteNonQuery(String.Format(@"DELETE FROM groups WHERE id = {0}", this.id));
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

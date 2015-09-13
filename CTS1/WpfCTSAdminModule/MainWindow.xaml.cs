@@ -33,12 +33,10 @@ namespace WpfCTSAdminModule
         public MainWindow()
         {
             InitializeComponent();
-            //tabcontrol1.SelectedIndex = 2;
             LoadSubjects();
             LoadGroups();
             LoadTutors();
         }
-
 
         private void LoadSubjects()
         {
@@ -124,7 +122,6 @@ namespace WpfCTSAdminModule
                     StackPanel.SetZIndex(panel2, 0);
                     panel1.Opacity = 0;
                     panel2.Opacity = 0;
-                    //LoadSubjects();
                     break;
 
                 case 1:
@@ -143,9 +140,7 @@ namespace WpfCTSAdminModule
                     StackPanel.SetZIndex(panel0, 0);
                     panel1.Opacity = 0;
                     panel0.Opacity = 0;
-                    //LoadGroups();
                     break;
-
             }
         }
 
@@ -156,13 +151,7 @@ namespace WpfCTSAdminModule
 
         private void tabItem1ButtonDelete_Click_1(object sender, RoutedEventArgs e)
         {
-            //Method_DeleteSubjects();
-            var item = tabItem1ListView.SelectedItem;
-            if (item != null)
-            {
-                DataRowView row = item as DataRowView;
-                //proxy.deleteGroup((int)row["id"]);
-            }
+            Method_DeleteSubjects();
         }
 
         private void tabItem1ButtonEdit_Click_1(object sender, RoutedEventArgs e)
@@ -292,22 +281,51 @@ namespace WpfCTSAdminModule
 
         private void Method_AddSubjects()
         {
-            //WindowSubject winS = new WindowSubject();
-            //if (winS.ShowDialog() == DialogResult.OK)
-            //{
-                
-            //}
-
+            try
+            {
+                NewWindow winN = new NewWindow();
+                if (winN.ShowDialog().Value)
+                {
+                    proxy.addSubject(winN.Text);
+                    LoadSubjects();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_DeleteSubjects()
         {
-            System.Windows.MessageBox.Show("Delete Subjects!!!");
+            try
+            {
+                DataRowView row = tabItem1ListView.SelectedItem as DataRowView;
+                proxy.deleteSubject(Convert.ToInt32(row["id"]));
+                LoadSubjects();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_EditSubjects()
         {
-            System.Windows.MessageBox.Show("Edit Subjects!!!");
+            try
+            {
+                DataRowView row = tabItem1ListView.SelectedItem as DataRowView;
+                NewWindow winN = new NewWindow(row["name"].ToString());
+                if (winN.ShowDialog().Value)
+                {
+                    proxy.updateSubject(Convert.ToInt32(row["id"]), winN.Text);
+                    LoadSubjects();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_FindSubjects()
@@ -322,12 +340,39 @@ namespace WpfCTSAdminModule
 
         private void Method_AddTutor()
         {
-            System.Windows.MessageBox.Show("ADD TUTOR!!!");
+            try
+            {
+                WindowTutor winT = new WindowTutor();
+                if (winT.ShowDialog().Value)
+                {
+                    AdditionalContacts listContacts = new AdditionalContacts();
+                    if(winT.Skype != "")
+                        listContacts.Add("skype", winT.Skype);
+                    if(winT.Telephon != "")
+                        listContacts.Add("tel", winT.Telephon);
+                    MessageBox.Show("!!!! " + winT.Group);
+                    proxy.addTutor(winT.Login, "123456", winT.Fio, winT.Email, listContacts, 2, Convert.ToInt32(winT.Group));
+                    LoadTutors();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_DeleteTutor()
         {
-            System.Windows.MessageBox.Show("Delete TUTOR!!!");
+            try
+            {
+                DataRowView row = tabItem2ListView.SelectedItem as DataRowView;
+                proxy.delUser(Convert.ToInt32(row["id"]));
+                LoadTutors();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_EditTutor()
@@ -347,17 +392,51 @@ namespace WpfCTSAdminModule
 
         private void Method_AddGroup()
         {
-            System.Windows.MessageBox.Show("ADD GROUP!!!");
+            try
+            {
+                NewWindow winN = new NewWindow();
+                if (winN.ShowDialog().Value)
+                {
+                    proxy.addGroup(winN.Text);
+                    LoadGroups();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_DeleteGroup()
         {
-            System.Windows.MessageBox.Show("Delete GROUP!!!");
+            try
+            {
+                DataRowView row = tabItem3ListView.SelectedItem as DataRowView;
+                proxy.deleteGroup(Convert.ToInt32(row["id"]));
+                LoadGroups();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_EditGroup()
         {
-            System.Windows.MessageBox.Show("Edit GROUP!!!");
+            try
+            {
+                DataRowView row = tabItem3ListView.SelectedItem as DataRowView;
+                NewWindow winN = new NewWindow(row["name"].ToString());
+                if (winN.ShowDialog().Value)
+                {
+                    proxy.updateGroup(Convert.ToInt32(row["id"]), winN.Text);
+                    LoadGroups();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void Method_FindGroup()
@@ -370,22 +449,20 @@ namespace WpfCTSAdminModule
             System.Windows.MessageBox.Show("HELP GROUP!!!");
         }
 
-        private void tabItem1ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            var item = (sender as ListView).SelectedItem;
-            if (item != null)
-            {
-                DataRowView row = item as DataRowView;
-                MessageBox.Show(row["name"].ToString());
-            }
+        //private void tabItem1ListView_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    var item = (sender as ListView).SelectedItem;
+        //    if (item != null)
+        //    {
+        //        DataRowView row = item as DataRowView;
+        //        MessageBox.Show(row["name"].ToString());
+        //    }
             
-        }
+        //}
 
         private void tabItem3_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             MessageBox.Show("VIBRANO");
         }
-
-
     }
 }

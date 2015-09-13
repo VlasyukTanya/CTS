@@ -46,7 +46,7 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Label Name="tabItem1Label" Content="Список предметов" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Margin="3,0" Width="182"/>
-                    <ListView Name="tabItem1ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" PreviewMouseLeftButtonUp="tabItem1ListView_PreviewMouseLeftButtonUp">
+                    <ListView Name="tabItem1ListView" Grid.Row="1" Grid.ColumnSpan="3" Margin="10">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="№" DisplayMemberBinding="{Binding Path=id}"/>

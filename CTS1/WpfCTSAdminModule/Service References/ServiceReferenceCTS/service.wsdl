@@ -107,6 +107,12 @@
   <wsdl:message name="IServiceCTS_addUserTest_OutputMessage">
     <wsdl:part name="parameters" element="tns:addUserTestResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceCTS_delUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:delUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_delUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delUserResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceCTS_GetTutorsDataTable_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTutorsDataTable" />
   </wsdl:message>
@@ -118,6 +124,54 @@
   </wsdl:message>
   <wsdl:message name="IServiceCTS_GetGroupsDataTable_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetGroupsDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:addSubject" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_deleteSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSubject" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_deleteSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_updateSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateSubject" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_updateSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:addGroup" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_deleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_deleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_updateGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateGroup" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_updateGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addTutor_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTutor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_addTutor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTutorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_updateTutor_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTutor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCTS_updateTutor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTutorResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceCTS">
     <wsdl:operation name="GetSubjectsDataTable">
@@ -164,6 +218,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addUserTest" message="tns:IServiceCTS_addUserTest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addUserTestResponse" message="tns:IServiceCTS_addUserTest_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="delUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/delUser" message="tns:IServiceCTS_delUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/delUserResponse" message="tns:IServiceCTS_delUser_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetTutorsDataTable">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetTutorsDataTable" message="tns:IServiceCTS_GetTutorsDataTable_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetTutorsDataTableResponse" message="tns:IServiceCTS_GetTutorsDataTable_OutputMessage" />
@@ -171,6 +229,38 @@
     <wsdl:operation name="GetGroupsDataTable">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/GetGroupsDataTable" message="tns:IServiceCTS_GetGroupsDataTable_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/GetGroupsDataTableResponse" message="tns:IServiceCTS_GetGroupsDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addSubject" message="tns:IServiceCTS_addSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addSubjectResponse" message="tns:IServiceCTS_addSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/deleteSubject" message="tns:IServiceCTS_deleteSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/deleteSubjectResponse" message="tns:IServiceCTS_deleteSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/updateSubject" message="tns:IServiceCTS_updateSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/updateSubjectResponse" message="tns:IServiceCTS_updateSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addGroup" message="tns:IServiceCTS_addGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addGroupResponse" message="tns:IServiceCTS_addGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/deleteGroup" message="tns:IServiceCTS_deleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/deleteGroupResponse" message="tns:IServiceCTS_deleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/updateGroup" message="tns:IServiceCTS_updateGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/updateGroupResponse" message="tns:IServiceCTS_updateGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addTutor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/addTutor" message="tns:IServiceCTS_addTutor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/addTutorResponse" message="tns:IServiceCTS_addTutor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTutor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCTS/updateTutor" message="tns:IServiceCTS_updateTutor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCTS/updateTutorResponse" message="tns:IServiceCTS_updateTutor_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ep1" type="tns:IServiceCTS">
@@ -276,6 +366,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="delUser">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/delUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetTutorsDataTable">
       <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetTutorsDataTable" style="document" />
       <wsdl:input>
@@ -287,6 +386,78 @@
     </wsdl:operation>
     <wsdl:operation name="GetGroupsDataTable">
       <soap12:operation soapAction="http://tempuri.org/IServiceCTS/GetGroupsDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSubject">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/addSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSubject">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/deleteSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSubject">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/updateSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addGroup">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/addGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteGroup">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/deleteGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateGroup">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/updateGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTutor">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/addTutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTutor">
+      <soap12:operation soapAction="http://tempuri.org/IServiceCTS/updateTutor" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

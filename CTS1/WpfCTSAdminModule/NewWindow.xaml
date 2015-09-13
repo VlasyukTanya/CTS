@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfCTSAdminModule.NewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewWindow" Height="155" Width="538">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Name="NewLabel" Grid.Row="0" Grid.ColumnSpan="2" Content="Название" HorizontalAlignment="Center" />
+        <TextBox Name="NewText" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="5" Width="515"/>
+        <Button Name="Ok" Grid.Row="2" Grid.Column="0" Content="OK" Margin="5" Click="Ok_Click"/>
+        <Button Name="Cancel" Grid.Row="2" Grid.Column="1" Content="Cancel" Margin="5" Click="Cancel_Click"/>
+    </Grid>
+</Window>

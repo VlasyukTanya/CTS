@@ -59,13 +59,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="NewWindow.xaml.cs">
+      <DependentUpon>NewWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReferenceCTS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="WindowSubject.xaml.cs">
-      <DependentUpon>WindowSubject.xaml</DependentUpon>
+    <Compile Include="WindowTutor.xaml.cs">
+      <DependentUpon>WindowTutor.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,7 +82,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WindowSubject.xaml">
+    <Page Include="NewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowTutor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,6 +111,8 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\DBLibrary.Group.datasource" />
     <None Include="Properties\DataSources\DBLibrary.Question.datasource" />
+    <None Include="Properties\DataSources\DBLibrary.Subject.datasource" />
+    <None Include="Properties\DataSources\DBLibrary.User.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

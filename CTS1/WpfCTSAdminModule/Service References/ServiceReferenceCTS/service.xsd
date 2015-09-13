@@ -219,6 +219,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="delUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetTutorsDataTable">
     <xs:complexType>
       <xs:sequence />
@@ -266,6 +278,120 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addSubject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addSubjectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteSubject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_subject" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteSubjectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateSubject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_subject" type="xs:int" />
+        <xs:element minOccurs="0" name="name_subject" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateSubjectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_group" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_group" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_group" type="xs:int" />
+        <xs:element minOccurs="0" name="name_group" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateGroupResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTutor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="realName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DBLibrary" minOccurs="0" name="additionalContacts" nillable="true" type="q2:AdditionalContacts" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="groupId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTutorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateTutor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="realName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DBLibrary" minOccurs="0" name="additionalContacts" nillable="true" type="q3:AdditionalContacts" />
+        <xs:element minOccurs="0" name="lastEditDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="roleId" type="xs:int" />
+        <xs:element minOccurs="0" name="groupId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateTutorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DBLibrary" minOccurs="0" name="updateTutorResult" nillable="true" type="q4:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -142,6 +142,28 @@ namespace DBLibrary
             this.roleId = roleId;
             this.groupId = groupId;
         }
+
+        public User(
+            DBDriver db,
+            string name,
+            string passwd,
+            string realName,
+            string email,
+            AdditionalContacts additionalContacts,
+            int roleId,
+            int groupId
+            )
+        {
+            this.db = db;
+            this.name = name;
+            this.passwd = passwd;
+            this.realName = realName;
+            this.email = email;
+            this.additionalContacts = additionalContacts;
+            this.roleId = roleId;
+            this.groupId = groupId;
+        }
+
         public User(DBDriver db)
         {
             this.db = db;
@@ -306,6 +328,7 @@ namespace DBLibrary
                 this.roleId, 
                 this.groupId);
         }
+
         public User Update()
         {
             try
@@ -367,6 +390,52 @@ namespace DBLibrary
             }
             
         }
+
+        public void UpdateTutor()
+        {
+            try
+            {
+                if (this.additionalContacts == null)
+                    this.db.ExecuteNonQuery(
+                    string.Format(
+                        @"EXECUTE dbo.users_update {0}, N'{1}', '{2}', N'{3}', N'{4}', {5}, {6}, {7};",
+                        this.id,
+                        this.name,
+                        this.passwd,
+                        this.realName,
+                        this.email,
+                        "NULL",
+                        this.roleId,
+                        this.groupId
+                        )
+                    );
+                else
+                {
+                    this.db.ExecuteNonQuery(
+                    string.Format(
+                        @"EXECUTE dbo.users_update {0}, N'{1}', '{2}', N'{3}', N'{4}', N'{5}', {6}, {7};",
+                        this.id,
+                        this.name,
+                        this.passwd,
+                        this.realName,
+                        this.email,
+                        this.additionalContacts.ToString(),
+                        this.roleId,
+                        this.groupId
+                        )
+                    );
+                }
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         public User ChangePassword(string passwd)
         {
             DataTable result = db.ExecuteQuery(String.Format(@"EXECUTE dbo.users_change_passwd {0}, {1}", this.id, passwd));
