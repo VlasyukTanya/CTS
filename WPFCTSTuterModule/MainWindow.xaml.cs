@@ -211,6 +211,7 @@ namespace WPFCTSTuterModule
             else
             {
                 proxy.delUser(idOfStudent);
+                MessageBox.Show("Пользователь удалён!");
             }
         }
 
@@ -242,12 +243,17 @@ namespace WPFCTSTuterModule
                 string newpassw = t2.Text;
                 string newname = t3.Text;
                 string newemail = t4.Text;
-                //the following line is not used
-                string newinfo = t5.Text;
+                //the following may not be used
+                string newinfo = t5.Text.ToString();
                 string newgroup = nameOfGroup;
 
                 proxy.addUser(newlogin, newpassw, newname, newemail, 3, idOfGroup);
 
+                if ((newinfo!="")&&(newinfo!="инфо"))
+                {
+                    proxy.setInfo(1007, "Skype", newinfo);
+                    
+                }
                 MessageBox.Show("Студент добавлен!");
             }
         }

@@ -137,6 +137,13 @@ namespace ServerModule
             return dt;
         }
 
+        public void setInfo(int userId, string s, string s1)
+        {
+            User us = new User(db);
+            (us.Get(userId)).AddContact(s, s1);
+            (us.Get(userId)).Update();
+        }
+
 //**********************************************************************************************************
         //Subject addSubject(int id_subject, string name_subject);
 

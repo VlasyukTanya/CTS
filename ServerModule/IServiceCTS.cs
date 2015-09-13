@@ -60,6 +60,9 @@ namespace ServerModule
         [OperationContract]
         DataTable GetTestsForUser(int userId);
 
+        [OperationContract]
+        void setInfo(int userId, string s, string s1);
+
         //[OperationContract]
         //Subject addSubject(int id_subject, string name_subject);
 
