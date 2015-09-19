@@ -19,8 +19,10 @@ namespace WpfCTSUserModule
     /// </summary>
     public partial class TestWindow : Window
     {
-        public TestWindow()
+        private MainWindow parent;
+        public TestWindow(MainWindow parent)
         {
+            this.parent = parent;
             InitializeComponent();
         }
     }

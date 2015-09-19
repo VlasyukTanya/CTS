@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Markup;
+using WpfCTSUserModule.ServiceReference1;
+using System.Data;
 
 namespace WpfCTSUserModule
 {
@@ -21,12 +24,11 @@ namespace WpfCTSUserModule
 
     public partial class MainWindow : Window
     {
+        ServiceReference1.ServiceCTSClient proxy = new ServiceReference1.ServiceCTSClient();
         private string userName;
-        private TestWindow parent;
 
-        public MainWindow(TestWindow parent)
+        public MainWindow()
         {
-            this.parent = parent;
             InitializeComponent();
             this.Hide();
             LoginWindow loginWindow = new LoginWindow(this);
@@ -46,8 +48,30 @@ namespace WpfCTSUserModule
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.parent.Show();
+            TestWindow tw = new TestWindow(this);
+            tw.Show();
             this.Close();
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = proxy.GetSubjectsDataTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //MessageBox.Show(dt.Rows[0]["name"].ToString());
+            /*foreach (string a in dt.DefaultView)
+            {
+                dt.
+                testslist.ItemsSource = dt.Rows[0]["name"].ToString();
+            }*/
+            //MessageBox.Show(dt.DefaultView.ToString());
+            testslist.ItemsSource = dt.DefaultView;
         }
     }
 }
