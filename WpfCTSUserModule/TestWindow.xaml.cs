@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Markup;
+using WpfCTSUserModule.ServiceReference1;
+using System.Data;
 
 namespace WpfCTSUserModule
 {
@@ -19,11 +22,18 @@ namespace WpfCTSUserModule
     /// </summary>
     public partial class TestWindow : Window
     {
+        ServiceReference1.ServiceCTSClient proxy = new ServiceReference1.ServiceCTSClient();
         private MainWindow parent;
         public TestWindow(MainWindow parent)
         {
             this.parent = parent;
             InitializeComponent();
+        }
+
+        private void Grid_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            
+            //winQ.Show();
         }
     }
 }

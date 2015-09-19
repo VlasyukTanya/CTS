@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:WpfCTSUserModule"
         mc:Ignorable="d"
         Title="TestWindow" Height="300" Width="300">
-    <Grid>
+    <Grid Loaded="Grid_Loaded_1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="27*"/>
             <ColumnDefinition Width="265*"/>
         </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="1" HorizontalAlignment="Left" Height="203" LastChildFill="False" Margin="10,10,0,0" VerticalAlignment="Top" Width="272" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
